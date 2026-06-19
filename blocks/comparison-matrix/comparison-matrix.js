@@ -3,7 +3,7 @@
  * B2B product feature-comparison matrix.
  *
  * Authoring model (rows of the block):
- *   Row 1 (header): | <comparison title> | <Product A: image + name + "View features" link> | <Product B: ...> |
+ *   Row 1 (header): | <title> | <Product A: image + name + "View features"> | <Product B: ...> |
  *   Rows 2..n-1 (features): | <feature name> \n <feature description> | <Yes/No> | <Yes/No> |
  *   Row n (footer, optional): | (empty) | <Buy now link A> | <Buy now link B> |
  *

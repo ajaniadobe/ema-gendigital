@@ -1,6 +1,3 @@
-import { fetchPlaceholders } from '../../scripts/aem.js';
-import { moveInstrumentation } from '../../scripts/scripts.js';
-
 function updateActiveSlide(slide) {
   const block = slide.closest('.carousel-blog');
   const slideIndex = parseInt(slide.dataset.slideIndex, 10);
@@ -91,13 +88,13 @@ function createSlide(row, slideIndex, carouselId) {
 }
 
 let carouselId = 0;
-export default async function decorate(block) {
+export default function init(block) {
   carouselId += 1;
   block.setAttribute('id', `carousel-blog-${carouselId}`);
   const rows = block.querySelectorAll(':scope > div');
   const isSingleSlide = rows.length < 2;
 
-  const placeholders = await fetchPlaceholders();
+  const placeholders = {};
 
   block.setAttribute('role', 'region');
   block.setAttribute('aria-roledescription', placeholders.carousel || 'Carousel');
@@ -130,7 +127,6 @@ export default async function decorate(block) {
 
   rows.forEach((row, idx) => {
     const slide = createSlide(row, idx, carouselId);
-    moveInstrumentation(row, slide);
     slidesWrapper.append(slide);
 
     if (slideIndicators) {
