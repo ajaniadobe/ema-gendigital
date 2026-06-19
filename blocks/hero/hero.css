@@ -8,6 +8,14 @@
   color: #fff;
   overflow: hidden;
 
+  /* glow: decorative top-right backdrop behind the hero product image (AVG homepage) */
+  &.glow {
+    background-image: url("https://static2.avg.com/10004857/web/i/banner_backgrounds/hero-desktop-gloweb-7026.jpg");
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    background-size: contain;
+  }
+
   &.small {
     --min-height: 180px;
   }
@@ -221,5 +229,11 @@
     .hero-foreground {
       grid-template-columns: 33% 33%;
     }
+  }
+}
+
+@media (width < 900px) {
+  .hero.glow {
+    background-image: none;
   }
 }
