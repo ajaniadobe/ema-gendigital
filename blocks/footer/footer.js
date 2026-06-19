@@ -23,6 +23,9 @@ export default async function init(el) {
     const legal = sections.pop();
     legal.classList.add('section-legal');
 
+    // First section is the brand column (logo + locale + account link).
+    if (sections.length) sections[0].classList.add('section-brand');
+
     el.append(fragment);
   } catch (e) {
     throw Error(e);
