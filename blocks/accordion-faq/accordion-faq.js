@@ -4,9 +4,7 @@
  * https://www.hlx.live/developer/block-collection/accordion
  */
 
-import { moveInstrumentation } from '../../scripts/scripts.js';
-
-export default function decorate(block) {
+export default function init(block) {
   [...block.children].forEach((row) => {
     // decorate accordion item label
     const label = row.children[0];
@@ -18,7 +16,6 @@ export default function decorate(block) {
     body.className = 'accordion-faq-item-body';
     // decorate accordion item
     const details = document.createElement('details');
-    moveInstrumentation(row, details);
     details.className = 'accordion-faq-item';
     details.append(summary, body);
     row.replaceWith(details);
