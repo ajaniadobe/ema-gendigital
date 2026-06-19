@@ -371,6 +371,19 @@ img {
   height: auto;
 }
 
+/* SVG icons embedded as content images (shield, arrows, product/feature glyphs)
+   are small line-art assets — don't let the global img width:100% stretch them
+   to the full container. Cap them at their natural size, centered. */
+main picture:has(img[src*=".svg"]) {
+  display: inline-block;
+}
+
+main img[src*=".svg"] {
+  width: auto;
+  max-width: 100%;
+  max-height: 80px;
+}
+
 svg {
   width: 20px;
   height: 20px;
