@@ -1,10 +1,12 @@
 /* rating: static customer-review rating reference (replaces Trustpilot iframe) */
 .rating {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 8px 12px;
   padding: 8px 0;
+  max-width: var(--grid-container-width);
+  margin: 0 auto;
 }
 
 .rating .rating-stars {
