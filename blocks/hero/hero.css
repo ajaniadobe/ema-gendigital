@@ -163,8 +163,9 @@
   .hero {
     .hero-foreground {
       display: grid;
-      grid-template-columns: 45% 45%;
-      justify-content: space-between;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-xxl);
+      align-items: center;
       max-width: var(--grid-container-width);
       margin: 0 auto;
       background: unset;
@@ -213,18 +214,3 @@
   }
 }
 
-@media (width >= 900px) {
-  .hero {
-    .hero-foreground {
-      grid-template-columns: 40% 40%;
-    }
-  }
-}
-
-@media (width >= 1200px) {
-  .hero {
-    .hero-foreground {
-      grid-template-columns: 33% 33%;
-    }
-  }
-}
