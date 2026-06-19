@@ -1,11 +1,18 @@
 .columns {
-  --columns-gap: 0;
+  --columns-gap: var(--spacing-xxl);
 
   display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
   gap: var(--columns-gap);
+  max-width: var(--grid-container-width, 1360px);
+  margin: 0 auto;
+  padding: var(--spacing-xxl) 0;
 
   img {
     display: block;
+    width: 100%;
+    height: auto;
   }
 
   .row {
@@ -15,6 +22,12 @@
   }
 
   .col {
+    align-self: center;
+
+    h2 {
+      margin-top: 0;
+    }
+
     :first-child {
       margin-top: 0;
     }
@@ -76,6 +89,14 @@
     .row {
       align-items: start;
     }
+  }
+}
+
+@media (width < 900px) {
+  .columns {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-l);
+    padding: var(--spacing-xl) 0;
   }
 }
 

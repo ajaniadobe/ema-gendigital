@@ -1,10 +1,17 @@
-/* usp-stripe: horizontal row of compact icon + benefit-label items */
+/* usp-stripe: white card with a row of compact icon + benefit-label items */
 .usp-stripe {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   gap: 16px 32px;
-  padding: 16px 0;
+  max-width: var(--grid-container-width, 1360px);
+  margin: 0 auto;
+  padding: 24px 32px;
+  background-color: var(--avg-bg, #fff);
+  border: 1px solid #e6e8ec;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px 0 rgb(0 0 0 / 8%);
 }
 
 .usp-stripe .usp-stripe-item {
