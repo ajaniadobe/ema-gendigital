@@ -1,0 +1,40 @@
+{
+  "variantName": "tool-placeholder",
+  "baseBlock": "card",
+  "version": "1.0.0",
+  "created": "2026-06-18T23:55:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.avg.com/en-us/random-password-generator",
+    "originPage": "AVG free-tool page (random-password-generator)",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "interactive-tool-placeholder",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "static stand-in for an out-of-scope interactive tool: readout value + status badge, an action-button label, and control rows (label + value/options); no application logic",
+    "buttonCount": 1,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "free-tool pages whose interactive widget is out of scope (password generator, decryptor lookups, calculators, choosers)",
+      "signalling where a live tool/embed/fragment will be inserted",
+      "preserving verbatim widget labels so a section's layout reads correctly"
+    ],
+    "notSuitableFor": [
+      "functional interactive components (build a real block/embed/fragment instead)",
+      "promo cards with body copy + CTA (use card)",
+      "feature grids (use card-feature)"
+    ]
+  },
+  "outOfScopeFlag": "Represents application logic that is intentionally NOT migrated. Static presentation only; an author replaces it with the live tool later.",
+  "usage": {
+    "pagesUsing": ["/en-us/random-password-generator"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-18T23:55:00.000Z"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "sites": {
+    "ema-gendigital": {
+      "previewOrg": "ajaniadobe",
+      "previewSite": "ema-gendigital",
+      "contentHostUrl": "https://content.da.live/ajaniadobe/ema-gendigital/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  },
+  "type": "da"
+}

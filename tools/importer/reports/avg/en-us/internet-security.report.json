@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://www.avg.com/en-us/internet-security",
+  "path": "avg/en-us/internet-security",
+  "timestamp": "2026-06-19T01:02:10.228Z",
+  "title": "AVG Internet Security Software | Online Protection | Free Trial",
+  "template": "consumer-product",
+  "blocks": [
+    "promo-bar",
+    "carousel-blog"
+  ]
+}

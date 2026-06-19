@@ -1,0 +1,41 @@
+/* usp-stripe: horizontal row of compact icon + benefit-label items */
+.usp-stripe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 32px;
+  padding: 16px 0;
+}
+
+.usp-stripe .usp-stripe-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: light-dark(var(--color-dark, #1a1a1a), var(--color-light, #fff));
+}
+
+.usp-stripe .usp-stripe-item p {
+  margin: 0;
+}
+
+.usp-stripe .usp-stripe-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+}
+
+.usp-stripe .usp-stripe-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--color-brand, #46a210);
+}
+
+@media (width >= 900px) {
+  .usp-stripe {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}

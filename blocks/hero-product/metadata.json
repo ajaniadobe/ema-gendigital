@@ -1,0 +1,31 @@
+{
+  "variantName": "hero-product",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-06-18T23:42:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.avg.com/en-us/secure-vpn",
+    "originPage": "AVG consumer-product landing page (secure-vpn)",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "product-hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "product logo glyph + H1 + intro paragraph over background image",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["product landing-page intros over a hero background image", "dark hero banners with H1 + intro copy", "consumer-product template heroes"],
+    "notSuitableFor": ["thin announcement strips (use promo-bar)", "closing CTA banners (use teaser-cta)", "no-image text intros"]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/secure-vpn"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-18T23:42:00.000Z"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "variantName": "card-pricing",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-18T23:42:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.avg.com/en-us/secure-vpn",
+    "originPage": "AVG consumer-product landing page (secure-vpn)",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "pricing-cards",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "repeating priced plan: term + platform icons + savings label + strikethrough/renewal price + per-month price + Buy now CTA + fine print",
+    "buttonCount": 1,
+    "imageCount": 0
+  },
+  "commerce": {
+    "static": true,
+    "note": "Prices, savings %, and Buy now -> checkout.avg.com links are driven by a live commerce backend that is OUT OF SCOPE. This variant renders STATIC authored copy + verbatim CTA link structure only. Dynamic pricing is NOT wired."
+  },
+  "reuseGuidance": {
+    "suitableFor": ["static pricing/plan card rows (1yr/2yr/3yr style)", "subscription plan comparisons authored as static content", "consumer-product checkout CTA card sets"],
+    "notSuitableFor": ["live/dynamic commerce pricing", "image-led product cards", "blog/article card grids"]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/secure-vpn"],
+    "reuseCount": 2,
+    "lastUsed": "2026-06-18T23:42:00.000Z"
+  }
+}

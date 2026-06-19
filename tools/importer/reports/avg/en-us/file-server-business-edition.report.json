@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://www.avg.com/en-us/file-server-business-edition",
+  "path": "avg/en-us/file-server-business-edition",
+  "timestamp": "2026-06-19T00:53:27.882Z",
+  "title": "Windows Server AntiVirus & Network Security | AVG Business",
+  "template": "business-product",
+  "blocks": [
+    "teaser-cta",
+    "card"
+  ]
+}

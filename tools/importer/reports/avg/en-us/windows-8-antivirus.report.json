@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "url": "https://www.avg.com/en-us/windows-8-antivirus",
+  "path": "avg/en-us/windows-8-antivirus",
+  "timestamp": "2026-06-19T01:12:46.007Z",
+  "title": "Antivirus for Windows 8 | AVG Free Download",
+  "template": "consumer-product",
+  "blocks": [
+    "columns-feature"
+  ]
+}

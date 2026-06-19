@@ -1,0 +1,598 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.avg.com/en-us/homepage"
+      ],
+      "representativeUrl": "https://www.avg.com/en-us/homepage",
+      "coverageGaps": [],
+      "description": "AVG homepage: promo bar, megamenu header, hero with Trustpilot rating, alternating media+text product features, awards strip, Included-in-Ultimate cards grid, blog carousel, closing CTA banner, footer.",
+      "blocks": [
+        {
+          "name": "promo-bar",
+          "instances": [
+            "#homepage > section.message-bar"
+          ]
+        },
+        {
+          "name": "hero",
+          "instances": [
+            "#top"
+          ]
+        },
+        {
+          "name": "rating",
+          "instances": [
+            "#top .trustpilot, #top iframe.trustpilot-widget, #top .rating"
+          ]
+        },
+        {
+          "name": "usp-stripe",
+          "instances": [
+            "#body-inner .section-usp-stripe",
+            "#top + .section-usp-stripe"
+          ]
+        },
+        {
+          "name": "advanced-tabs",
+          "instances": [
+            "#media-1"
+          ]
+        },
+        {
+          "name": "awards-strip",
+          "instances": [
+            "#awards-card"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            "#media-2",
+            "#media-3 > .container"
+          ]
+        },
+        {
+          "name": "card",
+          "instances": [
+            "#media-3 .included",
+            "#body-inner div.included"
+          ]
+        },
+        {
+          "name": "carousel",
+          "instances": [
+            "#blogposts"
+          ]
+        },
+        {
+          "name": "teaser-cta",
+          "instances": [
+            "#teaser"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "media-1",
+          "name": "section-media-1",
+          "selector": [
+            "#media-1"
+          ],
+          "style": "light",
+          "blocks": [
+            "advanced-tabs"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "awards-card",
+          "name": "section-awards",
+          "selector": [
+            "#awards-card"
+          ],
+          "style": "light",
+          "blocks": [
+            "awards-strip"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "media-2",
+          "name": "section-media-2",
+          "selector": [
+            "#media-2"
+          ],
+          "style": "light",
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "media-3",
+          "name": "section-media-3",
+          "selector": [
+            "#media-3"
+          ],
+          "style": "dark",
+          "blocks": [
+            "columns",
+            "card"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "blog",
+          "name": "section-blog",
+          "selector": [
+            "#blogposts"
+          ],
+          "style": "light",
+          "blocks": [
+            "carousel"
+          ],
+          "defaultContent": [
+            "#blogposts h2",
+            "#blogposts > .container > a"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "consumer-product",
+      "urls": [
+        "https://www.avg.com/en-us/antitrack",
+        "https://www.avg.com/en-us/antivirus-for-android",
+        "https://www.avg.com/en-us/avg-antivirus-for-mac",
+        "https://www.avg.com/en-us/avg-cleaner-for-mac-guide",
+        "https://www.avg.com/en-us/avg-driver-updater",
+        "https://www.avg.com/en-us/avg-memory-cleaner",
+        "https://www.avg.com/en-us/avg-pctuneup",
+        "https://www.avg.com/en-us/avg-remover",
+        "https://www.avg.com/en-us/avg-tuneup-for-mac",
+        "https://www.avg.com/en-us/avg-tuneup-ios",
+        "https://www.avg.com/en-us/battery-saver-for-windows",
+        "https://www.avg.com/en-us/breachguard",
+        "https://www.avg.com/en-us/download-secure-vpn-android",
+        "https://www.avg.com/en-us/download-secure-vpn-ios",
+        "https://www.avg.com/en-us/download-secure-vpn-mac",
+        "https://www.avg.com/en-us/free-antivirus-download",
+        "https://www.avg.com/en-us/internet-security",
+        "https://www.avg.com/en-us/internet-security-be-demo",
+        "https://www.avg.com/en-us/internet-security-for-mac",
+        "https://www.avg.com/en-us/mobile-security-for-iphone-ipad",
+        "https://www.avg.com/en-us/secure-browser",
+        "https://www.avg.com/en-us/secure-vpn",
+        "https://www.avg.com/en-us/store",
+        "https://www.avg.com/en-us/tuneup-software-updater",
+        "https://www.avg.com/en-us/ultimate",
+        "https://www.avg.com/en-us/windows-10-antivirus",
+        "https://www.avg.com/en-us/windows-11-antivirus",
+        "https://www.avg.com/en-us/windows-7-antivirus",
+        "https://www.avg.com/en-us/windows-8-antivirus"
+      ],
+      "representativeUrl": "https://www.avg.com/en-us/secure-vpn",
+      "coverageGaps": [],
+      "description": "Consumer product/app landing page: hero with commerce-driven pricing cards + free-trial CTA + Trustpilot, USP stripe, feature grids, 3-easy-steps, how-to-install / system requirements, FAQ accordion, blog carousel.",
+      "blocks": [
+        {
+          "name": "promo-bar",
+          "instances": [
+            "#homepage > section.message-bar",
+            "section.message-bar"
+          ]
+        },
+        {
+          "name": "hero-product",
+          "instances": [
+            "#hero"
+          ]
+        },
+        {
+          "name": "rating",
+          "instances": [
+            "#hero .trustpilot, #hero iframe, #hero .rating"
+          ]
+        },
+        {
+          "name": "card-pricing",
+          "instances": [
+            "#hero .pricing, #hero .buy, #bft .pricing, #bft"
+          ]
+        },
+        {
+          "name": "usp-stripe",
+          "instances": [
+            ".usp-stripe"
+          ]
+        },
+        {
+          "name": "card-feature",
+          "instances": [
+            "#highlights .cards, #highlights"
+          ]
+        },
+        {
+          "name": "columns-feature",
+          "instances": [
+            "#features .feature, #features"
+          ]
+        },
+        {
+          "name": "steps",
+          "instances": [
+            "#highlights-bottom .steps, #highlights-bottom"
+          ]
+        },
+        {
+          "name": "accordion-faq",
+          "instances": [
+            "#sysreq .faq, #sysreq #faq, #sysreq"
+          ]
+        },
+        {
+          "name": "carousel-blog",
+          "instances": [
+            "#blogposts"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "highlights",
+          "name": "section-highlights",
+          "selector": [
+            "#highlights"
+          ],
+          "style": "light",
+          "blocks": [
+            "card-feature"
+          ],
+          "defaultContent": [
+            "#highlights h2",
+            "#highlights > p"
+          ]
+        },
+        {
+          "id": "trial",
+          "name": "section-trial",
+          "selector": [
+            "#trial"
+          ],
+          "style": "light",
+          "blocks": [],
+          "defaultContent": [
+            "#trial h2",
+            "#trial p",
+            "#trial a"
+          ]
+        },
+        {
+          "id": "features",
+          "name": "section-features",
+          "selector": [
+            "#features"
+          ],
+          "style": "light",
+          "blocks": [
+            "columns-feature"
+          ],
+          "defaultContent": [
+            "#features h2"
+          ]
+        },
+        {
+          "id": "highlights-bottom",
+          "name": "section-steps",
+          "selector": [
+            "#highlights-bottom"
+          ],
+          "style": "light",
+          "blocks": [
+            "steps"
+          ],
+          "defaultContent": [
+            "#highlights-bottom h2"
+          ]
+        },
+        {
+          "id": "sysreq",
+          "name": "section-sysreq",
+          "selector": [
+            "#sysreq"
+          ],
+          "style": "light",
+          "blocks": [
+            "accordion-faq"
+          ],
+          "defaultContent": [
+            "#sysreq h2",
+            "#sysreq h3",
+            "#sysreq p",
+            "#sysreq ul"
+          ]
+        },
+        {
+          "id": "blogposts",
+          "name": "section-blog",
+          "selector": [
+            "#blogposts"
+          ],
+          "style": "light",
+          "blocks": [
+            "carousel-blog"
+          ],
+          "defaultContent": [
+            "#blogposts h2",
+            "#blogposts a"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "business-product",
+      "urls": [
+        "https://www.avg.com/en-us/antivirus-business-edition",
+        "https://www.avg.com/en-us/business-events-and-webinars",
+        "https://www.avg.com/en-us/business-resources",
+        "https://www.avg.com/en-us/business-security",
+        "https://www.avg.com/en-us/email-server-business-edition",
+        "https://www.avg.com/en-us/endpoint-protection",
+        "https://www.avg.com/en-us/file-server-business-edition",
+        "https://www.avg.com/en-us/internet-security-business-edition",
+        "https://www.avg.com/en-us/management-console",
+        "https://www.avg.com/en-us/patch-management",
+        "https://www.avg.com/en-us/small-business-digital-policy-guide-download",
+        "https://www.avg.com/en-us/store-business"
+      ],
+      "representativeUrl": "https://www.avg.com/en-us/business-security",
+      "coverageGaps": [],
+      "description": "Business/enterprise product page: hero with demo/contact-sales CTA, feature media sections, product comparison/spec table, contact CTA.",
+      "blocks": [
+        {
+          "name": "promo-bar",
+          "instances": [
+            "section.message-bar"
+          ]
+        },
+        {
+          "name": "hero",
+          "instances": [
+            "#body-inner > div.section-intro-variant-b"
+          ]
+        },
+        {
+          "name": "comparison-matrix",
+          "instances": [
+            "#comparison"
+          ]
+        },
+        {
+          "name": "teaser-cta",
+          "instances": [
+            "#body-inner > div.section.banner-management-console"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            "#body-inner div.section:has(img[alt*='One subscription'])"
+          ]
+        },
+        {
+          "name": "columns-feature",
+          "instances": [
+            "#body-inner div.section:has(img[alt*='Easy to manage'])"
+          ]
+        },
+        {
+          "name": "card",
+          "instances": [
+            "#body-inner div.section:last-of-type"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "comparison",
+          "name": "section-comparison",
+          "selector": [
+            "#comparison"
+          ],
+          "style": "light",
+          "blocks": [
+            "comparison-matrix"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "free-tools-guides",
+          "name": "section-resources",
+          "selector": [
+            "#body-inner div.section:last-of-type"
+          ],
+          "style": "light",
+          "blocks": [
+            "card"
+          ],
+          "defaultContent": [
+            "#body-inner div.section:last-of-type h2",
+            "#body-inner div.section:last-of-type > p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "free-tool",
+      "urls": [
+        "https://www.avg.com/en-us/awards",
+        "https://www.avg.com/en-us/help-me-choose",
+        "https://www.avg.com/en-us/online-markets-by-country",
+        "https://www.avg.com/en-us/online-research-faq",
+        "https://www.avg.com/en-us/online-research-main",
+        "https://www.avg.com/en-us/random-password-generator",
+        "https://www.avg.com/en-us/ransomware-decryption-tools"
+      ],
+      "representativeUrl": "https://www.avg.com/en-us/random-password-generator",
+      "coverageGaps": [],
+      "description": "Free interactive tool page: hero with tool widget (interactive logic out of scope, rendered as placeholder), upsell card, how-to 3-column tips, FAQ accordion.",
+      "blocks": [
+        {
+          "name": "promo-bar",
+          "instances": [
+            "section.message-bar"
+          ]
+        },
+        {
+          "name": "tool-placeholder",
+          "instances": [
+            "#top .tool, #top"
+          ]
+        },
+        {
+          "name": "card",
+          "instances": [
+            "div.js-platform-switch"
+          ]
+        },
+        {
+          "name": "card-feature",
+          "instances": [
+            "section.cards"
+          ]
+        },
+        {
+          "name": "accordion-faq",
+          "instances": [
+            "section#faq.faq",
+            "#faq"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "hero",
+          "name": "section-hero",
+          "selector": [
+            "#top"
+          ],
+          "style": "light",
+          "blocks": [
+            "tool-placeholder"
+          ],
+          "defaultContent": [
+            "#top h1",
+            "#top > p"
+          ]
+        },
+        {
+          "id": "tips",
+          "name": "section-tips",
+          "selector": [
+            "section.cards"
+          ],
+          "style": "light-blue",
+          "blocks": [
+            "card-feature"
+          ],
+          "defaultContent": [
+            "section.cards h2"
+          ]
+        },
+        {
+          "id": "faq",
+          "name": "section-faq",
+          "selector": [
+            "#faq"
+          ],
+          "style": "light",
+          "blocks": [
+            "accordion-faq"
+          ],
+          "defaultContent": [
+            "#faq h2",
+            "#faq > p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "content",
+      "urls": [
+        "https://www.avg.com/en-us/activate-account",
+        "https://www.avg.com/en-us/affiliate/become-an-avg-affiliate",
+        "https://www.avg.com/en-us/avg-go-tech-support",
+        "https://www.avg.com/en-us/campaign-landing-pages/ransomware-infographic-download",
+        "https://www.avg.com/en-us/campaign-landing-pages/ransomware-kit-download",
+        "https://www.avg.com/en-us/contacts",
+        "https://www.avg.com/en-us/hackers-and-hacking",
+        "https://www.avg.com/en-us/keeping-your-data-safe",
+        "https://www.avg.com/en-us/online-security-plugin",
+        "https://www.avg.com/en-us/partners",
+        "https://www.avg.com/en-us/profile",
+        "https://www.avg.com/en-us/remove-win32-expiro",
+        "https://www.avg.com/en-us/remove-win32-neshta",
+        "https://www.avg.com/en-us/remove-win32-virut",
+        "https://www.avg.com/en-us/services",
+        "https://www.avg.com/en-us/submit-a-sample"
+      ],
+      "representativeUrl": "https://www.avg.com/en-us/hackers-and-hacking",
+      "coverageGaps": [],
+      "description": "Informational/content page: intro, long-form rich text with subheadings, lists and media objects, closing CTA.",
+      "blocks": [
+        {
+          "name": "promo-bar",
+          "instances": [
+            "section.message-bar"
+          ]
+        }
+      ],
+      "sections": []
+    },
+    {
+      "name": "legal",
+      "urls": [
+        "https://www.avg.com/en-us/accessibility-policy",
+        "https://www.avg.com/en-us/beta",
+        "https://www.avg.com/en-us/cancellation-refund-policy",
+        "https://www.avg.com/en-us/consent-policy",
+        "https://www.avg.com/en-us/cookies",
+        "https://www.avg.com/en-us/do-not-sell",
+        "https://www.avg.com/en-us/eula",
+        "https://www.avg.com/en-us/legal-documentation",
+        "https://www.avg.com/en-us/policies",
+        "https://www.avg.com/en-us/privacy",
+        "https://www.avg.com/en-us/privacy-preferences",
+        "https://www.avg.com/en-us/privacy/updates",
+        "https://www.avg.com/en-us/products-policy",
+        "https://www.avg.com/en-us/remote-access-terms-and-conditions",
+        "https://www.avg.com/en-us/research-participant-terms-conditions",
+        "https://www.avg.com/en-us/secure-vpn-acceptable-use",
+        "https://www.avg.com/en-us/subscription-details",
+        "https://www.avg.com/en-us/supplier",
+        "https://www.avg.com/en-us/supplier-guidelines",
+        "https://www.avg.com/en-us/trademarks",
+        "https://www.avg.com/en-us/vpn-dmca",
+        "https://www.avg.com/en-us/vpn-policy",
+        "https://www.avg.com/en-us/vpn-territory"
+      ],
+      "representativeUrl": "https://www.avg.com/en-us/eula",
+      "coverageGaps": [],
+      "description": "Legal/policy long-form page: title + rich-text body (headings, paragraphs, lists). Default content, no custom blocks.",
+      "blocks": [
+        {
+          "name": "promo-bar",
+          "instances": [
+            "section.message-bar"
+          ]
+        }
+      ],
+      "sections": []
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://www.avg.com/en-us/avg-tuneup-for-mac",
+  "path": "avg/en-us/avg-tuneup-for-mac",
+  "timestamp": "2026-06-19T00:56:34.921Z",
+  "title": "Mac Cleaner and TuneUp Utility | AVG TuneUp for Mac",
+  "template": "consumer-product",
+  "blocks": [
+    "promo-bar",
+    "card-pricing",
+    "carousel-blog"
+  ]
+}

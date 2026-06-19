@@ -1,0 +1,87 @@
+/*
+ * Tool Placeholder block
+ * Static, non-interactive stand-in for an out-of-scope interactive tool widget.
+ * Mimics the original widget chrome (readout + badge, action button, control
+ * rows) so the layout reads correctly, but is purely presentational.
+ */
+
+.tool-placeholder {
+  max-width: 640px;
+  margin: var(--spacing-l, 32px) auto;
+  padding: var(--spacing-l, 32px);
+  border: 1px solid light-dark(var(--color-gray-300, #e0e0e0), var(--color-gray-700, #444));
+  border-radius: 12px;
+  background-color: light-dark(var(--color-light, #fff), var(--color-gray-900, #1a1a1a));
+  box-shadow: 0 1px 6px 0 rgb(0 0 0 / 8%);
+}
+
+.tool-placeholder .tool-placeholder-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-m, 16px);
+  padding: var(--spacing-s, 8px) 0;
+}
+
+/* Generated-value readout + status badge */
+.tool-placeholder .tool-placeholder-readout {
+  justify-content: space-between;
+  padding: var(--spacing-m, 16px);
+  border: 1px solid light-dark(var(--color-gray-300, #e0e0e0), var(--color-gray-700, #444));
+  border-radius: 8px;
+  margin-bottom: var(--spacing-m, 16px);
+}
+
+.tool-placeholder .tool-placeholder-value {
+  font-family: var(--font-family-mono, monospace);
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  color: light-dark(var(--color-dark, #071d2b), var(--color-light, #fff));
+  overflow-wrap: anywhere;
+}
+
+.tool-placeholder .tool-placeholder-badge {
+  flex: 0 0 auto;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--color-success, #008941);
+}
+
+/* Action button (e.g. "Copy") — looks like a button but does nothing */
+.tool-placeholder .tool-placeholder-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--color-success, #008941);
+  cursor: not-allowed;
+  user-select: none;
+}
+
+/* Control rows (Password length / Characters used) */
+.tool-placeholder .tool-placeholder-label {
+  flex: 0 0 auto;
+  font-size: 18px;
+  font-weight: 600;
+  color: light-dark(var(--color-dark, #071d2b), var(--color-light, #fff));
+}
+
+.tool-placeholder .tool-placeholder-control {
+  font-size: 16px;
+  color: light-dark(var(--color-gray-700, #555), var(--color-gray-300, #ccc));
+}
+
+/* Optional caption variant: a small note that this is a placeholder */
+.tool-placeholder.note::after {
+  content: 'Interactive tool preview — replace with live tool.';
+  display: block;
+  margin-top: var(--spacing-m, 16px);
+  font-size: 13px;
+  font-style: italic;
+  color: light-dark(var(--color-gray-700, #777), var(--color-gray-300, #aaa));
+}

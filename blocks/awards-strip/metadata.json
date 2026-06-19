@@ -1,0 +1,31 @@
+{
+  "variantName": "awards-strip",
+  "baseBlock": "card",
+  "version": "1.0.0",
+  "created": "2026-06-18T23:32:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.avg.com/en-us/homepage",
+    "originPage": "AVG homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "awards-strip",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "repeating award badge image + caption",
+    "buttonCount": 0,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": ["award/accolade badge rows", "certification logo strips", "image + caption recognition strips"],
+    "notSuitableFor": ["product feature cards", "cards needing body copy or CTAs"]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/homepage"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-18T23:32:00.000Z"
+  }
+}

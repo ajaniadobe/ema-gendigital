@@ -1,0 +1,31 @@
+/* rating: static customer-review rating reference (replaces Trustpilot iframe) */
+.rating {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  padding: 8px 0;
+}
+
+.rating .rating-stars {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.rating .rating-star {
+  fill: var(--color-gray-300, #ccc);
+}
+
+.rating .rating-star.is-filled {
+  fill: #00b67a; /* Trustpilot green */
+}
+
+.rating .rating-score {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.rating .rating-caption {
+  font-size: 14px;
+  color: light-dark(var(--color-gray-700, #555), var(--color-gray-300, #ccc));
+}

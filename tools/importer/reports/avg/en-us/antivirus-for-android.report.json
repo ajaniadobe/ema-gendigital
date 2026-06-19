@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://www.avg.com/en-us/antivirus-for-android",
+  "path": "avg/en-us/antivirus-for-android",
+  "timestamp": "2026-06-19T00:50:26.919Z",
+  "title": "Free Antivirus App for Android | AVG Mobile Security",
+  "template": "consumer-product",
+  "blocks": [
+    "columns-feature",
+    "carousel-blog"
+  ]
+}
