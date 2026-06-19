@@ -14,8 +14,9 @@
   --spacing-s: 8px;
   --spacing-xs: 4px;
 
-  /* color schemes */
-  color-scheme: light dark;
+  /* color schemes — AVG is a light-only design; opting out of dark prevents
+     the OS dark-mode preference from flipping default text/canvas to white. */
+  color-scheme: light;
 
   /* color tokens */
   --color-gray-100: #f1f1f1;
@@ -278,6 +279,7 @@ a {
 /* sections */
 .section {
   display: block;
+  color: var(--color-text);
 
   > .default-content {
     max-width: var(--grid-container-width);

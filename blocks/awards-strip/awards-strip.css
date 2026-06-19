@@ -1,11 +1,30 @@
-/* awards-strip: horizontal row of award badge images with captions */
+/* awards-strip: centered section header above a horizontal row of award badges */
 .awards-strip {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
   gap: 24px 40px;
-  padding: 24px 0;
+  padding: var(--spacing-xxl) 0;
+  max-width: var(--grid-container-width, 1360px);
+  margin: 0 auto;
+}
+
+.awards-strip .awards-strip-header {
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.awards-strip .awards-strip-header h2 {
+  margin: 0 0 var(--spacing-m);
+}
+
+.awards-strip .awards-strip-header p {
+  margin: 0;
+  color: var(--avg-text-muted, #4b5563);
 }
 
 .awards-strip .awards-strip-item {

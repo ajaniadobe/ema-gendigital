@@ -87,7 +87,6 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
 
     p {
       margin: 8px 0;
@@ -113,6 +112,12 @@
     .hero-heading {
       margin: 0;
     }
+  }
+
+  /* Dark legibility gradient only when text overlays a background image.
+     Heroes without a background image sit on the page and need no overlay. */
+  .hero-background + .hero-foreground {
+    background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
   }
 
   &.stack {
