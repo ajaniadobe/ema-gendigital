@@ -1,58 +1,4 @@
-@font-face {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("/styles/fonts/montserrat.woff2") format("woff2");
-  unicode-range:
-    U+0000-00FF,
-    U+0131,
-    U+0152-0153,
-    U+02BB-02BC,
-    U+02C6,
-    U+02DA,
-    U+02DC,
-    U+0304,
-    U+0308,
-    U+0329,
-    U+2000-206F,
-    U+20AC,
-    U+2122,
-    U+2191,
-    U+2193,
-    U+2212,
-    U+2215,
-    U+FEFF,
-    U+FFFD;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-style: italic;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("/styles/fonts/montserrat-italic.woff2") format("woff2");
-  unicode-range:
-    U+0000-00FF,
-    U+0131,
-    U+0152-0153,
-    U+02BB-02BC,
-    U+02C6,
-    U+02DA,
-    U+02DC,
-    U+0304,
-    U+0308,
-    U+0329,
-    U+2000-206F,
-    U+20AC,
-    U+2122,
-    U+2191,
-    U+2193,
-    U+2212,
-    U+2215,
-    U+FEFF,
-    U+FFFD;
-}
+@import url("brand.css");
 
 :root {
   /* grid */
@@ -159,24 +105,25 @@
   --color-dark-base: 0 0 0;
   --color-light: rgb(255 255 255);
   --color-dark: rgb(0 0 0);
-  --color-text: light-dark(var(--color-dark), var(--color-light));
-  --color-link: light-dark(var(--color-gray-900), var(--color-gray-100));
-  --color-brand: var(--color-purple-500);
-  --color-accent: light-dark(var(--color-magenta-600), var(--color-magenta-500));
-  --color-background: light-dark(var(--color-light), var(--color-dark));
-  --color-shaded: light-dark(#f9f9f9, #111);
+  --color-text: var(--avg-text);
+  --color-link: var(--avg-blue);
+  --color-link-hover: var(--avg-blue-hover);
+  --color-brand: var(--avg-green);
+  --color-accent: var(--avg-green);
+  --color-background: var(--avg-bg);
+  --color-shaded: var(--avg-light);
 
   /* fonts */
-  --font-family: montserrat, "Trebuchet MS", sans-serif;
+  --font-family: var(--avg-font-family);
 
   /* headings */
-  --heading-font-size-xxl: 32.44px;
-  --heading-font-size-xl: 28.83px;
-  --heading-font-size-l: 25.63px;
-  --heading-font-size-m: 22.78px;
-  --heading-font-size-s: 20.25px;
-  --heading-font-size-xs: 18px;
-  --heading-line-height: 1.15;
+  --heading-font-size-xxl: var(--avg-h1-size);
+  --heading-font-size-xl: var(--avg-h2-size);
+  --heading-font-size-l: var(--avg-h3-size);
+  --heading-font-size-m: var(--avg-h4-size);
+  --heading-font-size-s: 18px;
+  --heading-font-size-xs: 16px;
+  --heading-line-height: 1.25;
 
   /* body */
   --body-font-size-xxxl: 25px;
@@ -209,15 +156,10 @@ body {
   margin: 0;
   background-color: var(--color-background);
   color: var(--color-text);
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-family);
   font-size: var(--body-font-size-m);
   line-height: var(--body-line-height);
   padding: var(--header-height) 0 0;
-
-  &.session {
-    /* only allow font loading if a session */
-    font-family: var(--font-family);
-  }
 
   &.has-breadcrumb {
     margin: calc(var(--header-height) + var(--breadcrumb-height)) 0 0;
@@ -239,14 +181,24 @@ header {
 a {
   color: var(--color-link);
 
+  &:hover {
+    color: var(--color-link-hover);
+  }
+
+  /* AVG buttons: links wrapped in emphasis become .btn (see scripts/ak.js).
+     **link** -> btn-primary (green), *link* -> btn-secondary (blue),
+     ***link*** -> btn-accent (green), <u>link</u> -> btn-outline */
   &.btn {
     display: inline-block;
-    line-height: 1;
-    font-weight: 500;
+    border-radius: 4px;
+    line-height: 1.2;
+    font-size: 18px;
+    font-weight: 700;
     text-decoration: none;
     border: 2px solid;
-    padding: 8px 12px;
+    padding: 12px 28px;
     box-sizing: border-box;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 
     &.btn-outline {
       background: transparent;
@@ -255,32 +207,52 @@ a {
 
   &.btn-accent {
     color: #fff;
-    background: var(--color-accent);
-    border: 2px solid var(--color-accent);
+    background: var(--avg-green);
+    border-color: var(--avg-green);
+
+    &:hover {
+      background: var(--avg-green-hover);
+      border-color: var(--avg-green-hover);
+      color: #fff;
+    }
 
     &.btn-outline {
-      color: var(--color-accent);
+      color: var(--avg-green);
+      background: transparent;
     }
   }
 
   &.btn-primary {
-    color: var(--color-background);
-    background-color: var(--color-text);
-    border: 2px solid var(--color-text);
+    color: #fff;
+    background-color: var(--avg-green);
+    border-color: var(--avg-green);
+
+    &:hover {
+      background-color: var(--avg-green-hover);
+      border-color: var(--avg-green-hover);
+      color: #fff;
+    }
 
     &.btn-outline {
-      color: var(--color-text);
+      color: var(--avg-green);
       background: transparent;
     }
   }
 
   &.btn-secondary {
-    color: var(--color-background);
-    background-color: var(--color-gray-500);
-    border: 2px solid var(--color-gray-500);
+    color: #fff;
+    background-color: var(--avg-blue);
+    border-color: var(--avg-blue);
+
+    &:hover {
+      background-color: var(--avg-blue-hover);
+      border-color: var(--avg-blue-hover);
+      color: #fff;
+    }
 
     &.btn-outline {
-      color: var(--color-gray-500);
+      color: var(--avg-blue);
+      background: transparent;
     }
   }
 
@@ -303,6 +275,25 @@ a {
     max-width: var(--grid-container-width);
     margin: 0 auto;
   }
+}
+
+/* section background variants */
+.section.light {
+  background-color: var(--avg-light);
+}
+
+.section.dark {
+  background-color: var(--avg-dark);
+  color: #fff;
+}
+
+.section.dark h1,
+.section.dark h2,
+.section.dark h3,
+.section.dark h4,
+.section.dark h5,
+.section.dark h6 {
+  color: #fff;
 }
 
 main {
@@ -332,19 +323,40 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
+  font-weight: 700;
   line-height: var(--heading-line-height);
+  color: var(--avg-text);
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+  font-weight: var(--avg-h1-weight);
+  line-height: var(--avg-h1-line);
+}
+
+h2 {
+  font-size: var(--heading-font-size-xl);
+  font-weight: var(--avg-h2-weight);
+  line-height: var(--avg-h2-line);
+}
+
+h3 {
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--avg-h3-weight);
+  line-height: var(--avg-h3-line);
+}
+
+h4 {
+  font-size: var(--heading-font-size-m);
+  font-weight: var(--avg-h4-weight);
+  line-height: var(--avg-h4-line);
+}
+
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
 
 strong {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 input,

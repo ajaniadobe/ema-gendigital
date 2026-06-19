@@ -10,7 +10,7 @@ import advancedTabsParser from './parsers/advanced-tabs.js';
 import awardsStripParser from './parsers/awards-strip.js';
 import columnsParser from './parsers/columns.js';
 import cardParser from './parsers/card.js';
-import carouselParser from './parsers/carousel.js';
+import carouselBlogParser from './parsers/carousel-blog.js';
 import teaserCtaParser from './parsers/teaser-cta.js';
 
 // TRANSFORMER IMPORTS
@@ -27,7 +27,7 @@ const parsers = {
   'awards-strip': awardsStripParser,
   'columns': columnsParser,
   'card': cardParser,
-  'carousel': carouselParser,
+  'carousel-blog': carouselBlogParser,
   'teaser-cta': teaserCtaParser,
 };
 
@@ -94,7 +94,7 @@ const PAGE_TEMPLATE = {
       ]
     },
     {
-      "name": "carousel",
+      "name": "carousel-blog",
       "instances": [
         "#blogposts"
       ]
@@ -164,7 +164,7 @@ const PAGE_TEMPLATE = {
       ],
       "style": "light",
       "blocks": [
-        "carousel"
+        "carousel-blog"
       ],
       "defaultContent": [
         "#blogposts h2",

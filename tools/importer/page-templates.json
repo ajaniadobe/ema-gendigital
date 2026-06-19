@@ -64,7 +64,7 @@
           ]
         },
         {
-          "name": "carousel",
+          "name": "carousel-blog",
           "instances": [
             "#blogposts"
           ]
@@ -134,7 +134,7 @@
           ],
           "style": "light",
           "blocks": [
-            "carousel"
+            "carousel-blog"
           ],
           "defaultContent": [
             "#blogposts h2",

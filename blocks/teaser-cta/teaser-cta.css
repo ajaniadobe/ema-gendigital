@@ -5,7 +5,7 @@
 }
 
 .teaser-cta {
-  background-color: var(--color-brand, #46a210);
+  background-color: var(--avg-green, #008941);
   color: #fff;
   text-align: center;
   padding: 48px 24px;
@@ -34,6 +34,19 @@
   justify-content: center;
   align-items: center;
   margin-top: 8px;
+}
+
+/* white CTA buttons on the green banner (override global green-on-green) */
+.teaser-cta a.btn {
+  background-color: #fff;
+  border-color: #fff;
+  color: var(--avg-green, #008941);
+}
+
+.teaser-cta a.btn:hover {
+  background-color: var(--avg-light, #f8f9fa);
+  border-color: var(--avg-light, #f8f9fa);
+  color: var(--avg-green, #008941);
 }
 
 @media (width >= 900px) {

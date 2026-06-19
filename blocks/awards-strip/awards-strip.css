@@ -33,5 +33,5 @@
   margin: 8px 0 0;
   font-size: 13px;
   font-weight: 600;
-  color: light-dark(var(--color-gray-700, #555), var(--color-gray-200, #e5e5e5));
+  color: var(--avg-text-muted, #4b5563);
 }
