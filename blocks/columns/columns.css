@@ -1,10 +1,9 @@
 .columns {
   --columns-gap: var(--spacing-xxl);
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: var(--columns-gap);
+  /* .columns is a block wrapper; the column split happens on each .row.
+     (Putting a grid on .columns itself wrongly tiled the rows into extra columns.) */
+  display: block;
   max-width: var(--grid-container-width, 1360px);
   margin: 0 auto;
   padding: var(--spacing-xxl) 0;
@@ -19,6 +18,10 @@
     display: grid;
     align-items: center;
     gap: var(--columns-gap);
+  }
+
+  .row + .row {
+    margin-top: var(--columns-gap);
   }
 
   .col {
@@ -94,9 +97,12 @@
 
 @media (width < 900px) {
   .columns {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .columns .row {
     grid-template-columns: 1fr;
     gap: var(--spacing-l);
-    padding: var(--spacing-xl) 0;
   }
 }
 

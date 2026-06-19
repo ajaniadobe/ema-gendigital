@@ -1,0 +1,565 @@
+[
+  {
+    "slug": "accessibility-policy",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "activate-account",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "affiliate/become-an-avg-affiliate",
+    "changes": 3,
+    "applied": {
+      "Sign Up Now": "green"
+    }
+  },
+  {
+    "slug": "antitrack",
+    "changes": 5,
+    "applied": {
+      "Buy now": "blue",
+      "Free privacy scan": "green"
+    }
+  },
+  {
+    "slug": "antivirus-business-edition",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "antivirus-for-android",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "avg-antivirus-for-mac",
+    "changes": 1,
+    "applied": {
+      "Windows": "green"
+    }
+  },
+  {
+    "slug": "avg-cleaner-for-mac-guide",
+    "changes": 2,
+    "applied": {
+      "Check out our test results": "white",
+      "FREE Download": "green"
+    }
+  },
+  {
+    "slug": "avg-driver-updater",
+    "changes": 2,
+    "applied": {
+      "Free download": "green"
+    }
+  },
+  {
+    "slug": "avg-go-tech-support",
+    "changes": 1,
+    "applied": {
+      "START NOW": "green"
+    }
+  },
+  {
+    "slug": "avg-memory-cleaner",
+    "changes": 2,
+    "applied": {
+      "FREE Download": "green"
+    }
+  },
+  {
+    "slug": "avg-pctuneup",
+    "changes": 2,
+    "applied": {
+      "See Options": "blue-outline",
+      "Windows": "green"
+    }
+  },
+  {
+    "slug": "avg-remover",
+    "changes": 1,
+    "applied": {
+      "Download": "green"
+    }
+  },
+  {
+    "slug": "avg-tuneup-for-mac",
+    "changes": 1,
+    "applied": {
+      "Windows": "green"
+    }
+  },
+  {
+    "slug": "avg-tuneup-ios",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "awards",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "battery-saver-for-windows",
+    "changes": 1,
+    "applied": {
+      "VISIT AVG STORE": "blue"
+    }
+  },
+  {
+    "slug": "beta",
+    "changes": 3,
+    "applied": {
+      "Download": "green"
+    }
+  },
+  {
+    "slug": "breachguard",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "business-events-and-webinars",
+    "changes": 4,
+    "applied": {
+      "Join Demo": "green",
+      "Watch Demo": "green",
+      "Login": "blue"
+    }
+  },
+  {
+    "slug": "business-resources",
+    "changes": 5,
+    "applied": {
+      "Become a Partner": "green",
+      "Watch Demo": "green",
+      "Join Demo": "green",
+      "Login": "blue"
+    }
+  },
+  {
+    "slug": "business-security",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "campaign-landing-pages/ransomware-infographic-download",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "campaign-landing-pages/ransomware-kit-download",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "cancellation-refund-policy",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "consent-policy",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "contacts",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "cookies",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "do-not-sell",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "download-secure-vpn-android",
+    "changes": 1,
+    "applied": {
+      "Start free trial": "green"
+    }
+  },
+  {
+    "slug": "download-secure-vpn-ios",
+    "changes": 1,
+    "applied": {
+      "Start free trial": "green"
+    }
+  },
+  {
+    "slug": "download-secure-vpn-mac",
+    "changes": 1,
+    "applied": {
+      "Windows": "green"
+    }
+  },
+  {
+    "slug": "email-server-business-edition",
+    "changes": 1,
+    "applied": {
+      "Buy Now From $25.12": "green"
+    }
+  },
+  {
+    "slug": "endpoint-protection",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "eula",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "file-server-business-edition",
+    "changes": 1,
+    "applied": {
+      "Buy Now From $20.41": "green"
+    }
+  },
+  {
+    "slug": "free-antivirus-download",
+    "changes": 1,
+    "applied": {
+      "Free download": "green"
+    }
+  },
+  {
+    "slug": "hackers-and-hacking",
+    "changes": 1,
+    "applied": {
+      "Download Now": "green"
+    }
+  },
+  {
+    "slug": "help-me-choose",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "homepage",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "internet-security-be-demo",
+    "changes": 1,
+    "applied": {
+      "Get a demo": "green"
+    }
+  },
+  {
+    "slug": "internet-security-business-edition",
+    "changes": 1,
+    "applied": {
+      "Learn more": "white"
+    }
+  },
+  {
+    "slug": "internet-security-for-mac",
+    "changes": 1,
+    "applied": {
+      "Download": "blue"
+    }
+  },
+  {
+    "slug": "internet-security",
+    "changes": 1,
+    "applied": {
+      "Windows": "green"
+    }
+  },
+  {
+    "slug": "keeping-your-data-safe",
+    "changes": 1,
+    "applied": {
+      "Download Now": "green"
+    }
+  },
+  {
+    "slug": "legal-documentation",
+    "changes": 1,
+    "applied": {
+      "Back to Partners": "blue"
+    }
+  },
+  {
+    "slug": "management-console",
+    "changes": 1,
+    "applied": {
+      "Select Protection": "green"
+    }
+  },
+  {
+    "slug": "mobile-security-for-iphone-ipad",
+    "changes": 1,
+    "applied": {
+      "See more features Show less features": "secondary"
+    }
+  },
+  {
+    "slug": "online-markets-by-country",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "online-research-faq",
+    "changes": 1,
+    "applied": {
+      "Return to top": "blue"
+    }
+  },
+  {
+    "slug": "online-research-main",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "online-security-plugin",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "partners",
+    "changes": 1,
+    "applied": {
+      "Become a partner": "green"
+    }
+  },
+  {
+    "slug": "patch-management",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "policies",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "privacy-preferences",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "privacy",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "privacy/updates",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "products-policy",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "profile",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "random-password-generator",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "ransomware-decryption-tools",
+    "changes": 8,
+    "applied": {
+      "Download Apocalypse Fix": "green",
+      "Download ApocalypseVM Fix": "green",
+      "Download BadBlock Fix for 32-bit Windows": "green",
+      "Download Bart Fix": "green",
+      "Download Crypt888 Fix": "green",
+      "Download Legion Fix": "green",
+      "Download SZFLocker Fix": "green",
+      "Download TeslaCrypt Fix": "green"
+    }
+  },
+  {
+    "slug": "remote-access-terms-and-conditions",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "remove-win32-expiro",
+    "changes": 3,
+    "applied": {
+      "Download Expiro Fix": "green",
+      "Back to virus removal": "blue"
+    }
+  },
+  {
+    "slug": "remove-win32-neshta",
+    "changes": 3,
+    "applied": {
+      "Download Neshta Fix": "green",
+      "Back to virus removal": "blue"
+    }
+  },
+  {
+    "slug": "remove-win32-virut",
+    "changes": 3,
+    "applied": {
+      "Download Virut Fix": "green",
+      "Back to virus removal": "blue"
+    }
+  },
+  {
+    "slug": "research-participant-terms-conditions",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "secure-browser",
+    "changes": 5,
+    "applied": {
+      "See all the features See all the features": "secondary",
+      "Apple silicon": "outline",
+      "Windows": "green"
+    }
+  },
+  {
+    "slug": "secure-vpn-acceptable-use",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "secure-vpn",
+    "changes": 1,
+    "applied": {
+      "Windows": "green"
+    }
+  },
+  {
+    "slug": "services",
+    "changes": 1,
+    "applied": {
+      "START NOW": "green"
+    }
+  },
+  {
+    "slug": "small-business-digital-policy-guide-download",
+    "changes": 1,
+    "applied": {
+      "Download Now": "green"
+    }
+  },
+  {
+    "slug": "store-business",
+    "changes": 2,
+    "applied": {
+      "See consumer products": "green",
+      "See solutions": "blue"
+    }
+  },
+  {
+    "slug": "store",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "submit-a-sample",
+    "changes": 2,
+    "applied": {
+      "Open submit form": "blue"
+    }
+  },
+  {
+    "slug": "subscription-details",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "supplier-guidelines",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "supplier",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "trademarks",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "tuneup-software-updater",
+    "changes": 3,
+    "applied": {
+      "FREE Download": "green",
+      "See research results": "white",
+      "Free Download": "green"
+    }
+  },
+  {
+    "slug": "ultimate",
+    "changes": 7,
+    "applied": {
+      "See all security features": "green",
+      "See all performance features": "green",
+      "See all privacy features": "green",
+      "See all Android features": "green",
+      "See all iOS features": "green",
+      "Find out more about AntiTrack": "green",
+      "Learn more": "green"
+    }
+  },
+  {
+    "slug": "vpn-dmca",
+    "changes": 1,
+    "applied": {
+      "Back to Policies": "blue"
+    }
+  },
+  {
+    "slug": "vpn-policy",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "vpn-territory",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "windows-10-antivirus",
+    "changes": 1,
+    "applied": {
+      "Discover all the features": "green"
+    }
+  },
+  {
+    "slug": "windows-11-antivirus",
+    "changes": 4,
+    "applied": {
+      "Free Download": "green"
+    }
+  },
+  {
+    "slug": "windows-7-antivirus",
+    "changes": 0,
+    "applied": {}
+  },
+  {
+    "slug": "windows-8-antivirus",
+    "changes": 4,
+    "applied": {
+      "Free Download": "green"
+    }
+  }
+]
