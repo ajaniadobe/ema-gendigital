@@ -23,12 +23,25 @@ footer {
     font-size: 14px;
   }
 
-  /* link columns row */
+  /* columns row: brand column + 4 link columns */
   .footer-content > .section:not(.section-legal, .section-copyright) {
     display: inline-block;
     vertical-align: top;
-    width: 24%;
+    width: 19%;
     margin-bottom: 24px;
+  }
+
+  /* brand column: AVG logo, locale, and account link on the far left */
+  .section-brand {
+    p {
+      margin: 0 0 16px;
+    }
+
+    img,
+    svg {
+      height: 32px;
+      width: auto;
+    }
   }
 
   ul {
