@@ -397,7 +397,7 @@ svg {
 
 @media (width >= 1440px) {
   :root {
-    --grid-container-width: 1200px;
+    --grid-container-width: 1360px;
   }
 }
 
