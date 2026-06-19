@@ -64,5 +64,9 @@ export default async function init(el) {
     const bg = rows.pop();
     bg.classList.add('hero-background');
     decorateBackground(bg);
+  } else if (!el.classList.contains('light') && !el.classList.contains('dark')) {
+    // No background row means the foreground sits on the page background,
+    // so default to dark text (white text would be invisible on a light page).
+    el.classList.add('light');
   }
 }
