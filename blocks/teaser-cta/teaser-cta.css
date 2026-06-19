@@ -37,13 +37,13 @@
 }
 
 /* white CTA buttons on the green banner (override global green-on-green) */
-.teaser-cta a.button:any-link {
+.teaser-cta a.btn {
   background-color: #fff;
   border-color: #fff;
   color: var(--avg-green, #008941);
 }
 
-.teaser-cta a.button:any-link:hover {
+.teaser-cta a.btn:hover {
   background-color: var(--avg-light, #f8f9fa);
   border-color: var(--avg-light, #f8f9fa);
   color: var(--avg-green, #008941);

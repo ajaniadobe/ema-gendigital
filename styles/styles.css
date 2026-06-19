@@ -185,60 +185,20 @@ a {
     color: var(--color-link-hover);
   }
 
-  /* EDS auto-button: standalone link -> AVG primary (green) CTA */
-  &.button:any-link {
-    display: inline-block;
-    box-sizing: border-box;
-    border: 2px solid var(--avg-green);
-    border-radius: 4px;
-    padding: 12px 28px;
-    background-color: var(--avg-green);
-    color: #fff;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 1.2;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-  }
-
-  &.button:any-link:hover {
-    background-color: var(--avg-green-hover);
-    border-color: var(--avg-green-hover);
-    color: #fff;
-  }
-
-  /* secondary CTA (blue) */
-  &.button.secondary:any-link {
-    border-color: var(--avg-blue);
-    background-color: var(--avg-blue);
-  }
-
-  &.button.secondary:any-link:hover {
-    background-color: var(--avg-blue-hover);
-    border-color: var(--avg-blue-hover);
-  }
-
-  /* outline / tertiary CTA */
-  &.button.outline:any-link {
-    background-color: transparent;
-    color: var(--avg-green);
-  }
-
-  &.button.outline:any-link:hover {
-    background-color: var(--avg-green);
-    color: #fff;
-  }
-
+  /* AVG buttons: links wrapped in emphasis become .btn (see scripts/ak.js).
+     **link** -> btn-primary (green), *link* -> btn-secondary (blue),
+     ***link*** -> btn-accent (green), <u>link</u> -> btn-outline */
   &.btn {
     display: inline-block;
-    line-height: 1;
-    font-weight: 500;
+    border-radius: 4px;
+    line-height: 1.2;
+    font-size: 18px;
+    font-weight: 700;
     text-decoration: none;
     border: 2px solid;
-    padding: 8px 12px;
+    padding: 12px 28px;
     box-sizing: border-box;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 
     &.btn-outline {
       background: transparent;
@@ -247,32 +207,52 @@ a {
 
   &.btn-accent {
     color: #fff;
-    background: var(--color-accent);
-    border: 2px solid var(--color-accent);
+    background: var(--avg-green);
+    border-color: var(--avg-green);
+
+    &:hover {
+      background: var(--avg-green-hover);
+      border-color: var(--avg-green-hover);
+      color: #fff;
+    }
 
     &.btn-outline {
-      color: var(--color-accent);
+      color: var(--avg-green);
+      background: transparent;
     }
   }
 
   &.btn-primary {
-    color: var(--color-background);
-    background-color: var(--color-text);
-    border: 2px solid var(--color-text);
+    color: #fff;
+    background-color: var(--avg-green);
+    border-color: var(--avg-green);
+
+    &:hover {
+      background-color: var(--avg-green-hover);
+      border-color: var(--avg-green-hover);
+      color: #fff;
+    }
 
     &.btn-outline {
-      color: var(--color-text);
+      color: var(--avg-green);
       background: transparent;
     }
   }
 
   &.btn-secondary {
-    color: var(--color-background);
-    background-color: var(--color-gray-500);
-    border: 2px solid var(--color-gray-500);
+    color: #fff;
+    background-color: var(--avg-blue);
+    border-color: var(--avg-blue);
+
+    &:hover {
+      background-color: var(--avg-blue-hover);
+      border-color: var(--avg-blue-hover);
+      color: #fff;
+    }
 
     &.btn-outline {
-      color: var(--color-gray-500);
+      color: var(--avg-blue);
+      background: transparent;
     }
   }
 
