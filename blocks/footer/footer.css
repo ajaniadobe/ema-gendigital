@@ -16,32 +16,49 @@ footer {
     color: #fff;
   }
 
+  /* columns row: a wider brand column on the left + 4 equal link columns.
+     (Source footer gives the brand column extra width, not an even split.) */
   .footer-content {
     max-width: var(--grid-container-width);
     margin: 0 auto;
     padding: 48px 0;
     font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 24px 32px;
   }
 
-  /* columns row: brand column + 4 link columns */
-  .footer-content > .section:not(.section-legal, .section-copyright) {
-    display: inline-block;
-    vertical-align: top;
-    width: 19%;
+  .footer-content > .section:not(.section-legal, .section-copyright, .section-brand) {
+    flex: 1 1 0;
     margin-bottom: 24px;
   }
 
-  /* brand column: AVG logo, locale, and account link on the far left */
+  /* brand column is wider than the link columns (excluded from the rule above
+     so the two flex values don't compete at equal specificity). */
+  .footer-content > .section-brand {
+    flex: 1.8 1 0;
+    margin-bottom: 24px;
+  }
+
   .section-brand {
     p {
       margin: 0 0 16px;
     }
 
+    .icon-logo,
     img,
     svg {
-      height: 32px;
-      width: auto;
+      display: block;
+      height: 36px;
+      width: 88px;
     }
+  }
+
+  /* legal + copyright span the full row beneath the columns */
+  .footer-content > .section-legal,
+  .footer-content > .section-copyright {
+    flex: 1 1 100%;
   }
 
   ul {
@@ -78,8 +95,7 @@ footer {
 @media (width < 900px) {
   footer {
     .footer-content > .section:not(.section-legal, .section-copyright) {
-      display: block;
-      width: 100%;
+      flex: 1 1 100%;
       border-bottom: 1px solid rgb(255 255 255 / 12%);
       padding-bottom: 16px;
     }
