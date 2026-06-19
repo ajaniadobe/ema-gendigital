@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://www.avg.com/en-us/avg-memory-cleaner",
+  "path": "avg/en-us/avg-memory-cleaner",
+  "timestamp": "2026-06-19T00:53:56.945Z",
+  "title": "Free Phone Cleaner | Clean up Android Phones & Tablets | AVG",
+  "template": "consumer-product",
+  "blocks": [
+    "hero-product",
+    "rating",
+    "columns-feature",
+    "carousel-blog"
+  ]
+}

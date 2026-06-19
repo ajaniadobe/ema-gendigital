@@ -1,0 +1,54 @@
+{
+  "variantName": "comparison-matrix",
+  "baseBlock": "table",
+  "version": "1.0.0",
+  "created": "2026-06-18T23:50:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.avg.com/en-us/business-security",
+    "originPage": "AVG Business Security (business-product template representative)",
+    "blockPosition": "top (below hero)"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "wide",
+    "purpose": "product-comparison",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "header row (title + product columns: icon+name+features-link) | feature rows (name+description + yes/no tick per product) | optional footer row (buy-now link per product)",
+    "buttonCount": 2,
+    "imageCount": 2,
+    "productColumns": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "B2B product feature-comparison matrices",
+      "spec/feature comparison tables with tick/cross glyphs",
+      "multi-product 'choose your plan' comparison grids with per-product CTAs",
+      "business/enterprise product pages comparing 2+ editions"
+    ],
+    "notSuitableFor": [
+      "simple data tables with plain text cells (use base 'table' block)",
+      "pricing cards (use 'card-pricing')",
+      "single-product feature lists (use 'card-feature' or 'columns-feature')"
+    ]
+  },
+  "structuralAssets": [
+    "tick/cross glyph (inline SVG, baked into CSS)",
+    "platform icons (Windows / Windows Server) — structural, baked",
+    "product icons 50x50 — treated as structural glyphs"
+  ],
+  "authoredContent": [
+    "comparison title",
+    "product names",
+    "feature headlines + descriptions",
+    "yes/no values per cell",
+    "View features hrefs",
+    "Buy now (commerce store) hrefs — preserve verbatim, backend-dependent/out of scope"
+  ],
+  "usage": {
+    "pagesUsing": ["/en-us/business-security"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-18T23:50:00.000Z"
+  }
+}

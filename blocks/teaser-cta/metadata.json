@@ -1,0 +1,41 @@
+{
+  "variantName": "teaser-cta",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-06-18T23:32:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.avg.com/en-us/homepage",
+    "originPage": "AVG homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "accent",
+    "density": "spacious",
+    "purpose": "closing-cta-banner",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "heading + CTA button cluster",
+    "buttonCount": 3,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "closing full-width CTA banners",
+      "download/sign-up call-to-action bands",
+      "brand-color teaser banners"
+    ],
+    "notSuitableFor": [
+      "page intro heroes with imagery",
+      "content sections with long body copy"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en-us/homepage",
+      "/en-us/business-security"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-06-18T23:51:39.451828Z"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://www.avg.com/en-us/ultimate",
+  "path": "avg/en-us/ultimate",
+  "timestamp": "2026-06-19T01:09:15.715Z",
+  "title": "AVG Ultimate | Multi-device Antivirus, Performance & VPN Bundle",
+  "template": "consumer-product",
+  "blocks": [
+    "promo-bar",
+    "columns-feature",
+    "carousel-blog"
+  ]
+}

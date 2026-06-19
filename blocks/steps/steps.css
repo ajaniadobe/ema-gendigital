@@ -1,0 +1,74 @@
+.steps > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 24px;
+  counter-reset: step;
+}
+
+.steps > ul > li.steps-item {
+  position: relative;
+  text-align: center;
+  counter-increment: step;
+}
+
+/* baked-in numbered step glyph */
+.steps > ul > li.steps-item::before {
+  content: counter(step);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background-color: var(--link-color, #2c2f7c);
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* connector arrow glyph between steps (baked into code) */
+.steps > ul > li.steps-item:not(:last-child)::after {
+  content: '';
+  display: none;
+}
+
+.steps .steps-item-image {
+  line-height: 0;
+}
+
+.steps .steps-item-image img {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.steps .steps-item-body {
+  margin: 8px auto 0;
+  max-width: 280px;
+}
+
+@media (width >= 900px) {
+  .steps > ul {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+  }
+
+  /* connector arrow between steps on wider viewports */
+  .steps > ul > li.steps-item:not(:last-child)::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--link-color, #2c2f7c);
+    border-width: 2px 2px 0 0;
+    transform: rotate(45deg);
+  }
+}

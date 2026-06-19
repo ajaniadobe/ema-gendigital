@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://www.avg.com/en-us/avg-driver-updater",
+  "path": "avg/en-us/avg-driver-updater",
+  "timestamp": "2026-06-19T00:53:04.519Z",
+  "title": "Update Drivers Automatically | Download AVG Driver Updater",
+  "template": "consumer-product",
+  "blocks": [
+    "columns-feature",
+    "carousel-blog"
+  ]
+}

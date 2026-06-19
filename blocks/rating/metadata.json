@@ -1,0 +1,31 @@
+{
+  "variantName": "rating",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-06-18T23:32:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.avg.com/en-us/homepage",
+    "originPage": "AVG homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "rating-reference",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "stars + score + caption",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": ["static Trustpilot/customer-review rating references", "star-rating callouts where the live widget cannot be embedded"],
+    "notSuitableFor": ["live interactive review widgets", "full testimonial blocks with quotes"]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/homepage", "/en-us/secure-vpn"],
+    "reuseCount": 2,
+    "lastUsed": "2026-06-18T23:42:00.000Z"
+  }
+}

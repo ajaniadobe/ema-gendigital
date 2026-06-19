@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://www.avg.com/en-us/download-secure-vpn-mac",
+  "path": "avg/en-us/download-secure-vpn-mac",
+  "timestamp": "2026-06-19T01:01:10.271Z",
+  "title": "Free VPN Download for Mac",
+  "template": "consumer-product",
+  "blocks": [
+    "promo-bar",
+    "columns-feature",
+    "carousel-blog"
+  ]
+}

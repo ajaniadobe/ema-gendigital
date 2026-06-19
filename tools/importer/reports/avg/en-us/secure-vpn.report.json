@@ -1,0 +1,27 @@
+{
+  "status": "success",
+  "url": "https://www.avg.com/en-us/secure-vpn",
+  "path": "avg/en-us/secure-vpn",
+  "timestamp": "2026-06-19T01:06:36.407Z",
+  "title": "Download Secure VPN for PC or Laptop | Free Trial | AVG",
+  "template": "consumer-product",
+  "blocks": [
+    "promo-bar",
+    "hero-product",
+    "rating",
+    "card-pricing",
+    "usp-stripe",
+    "card-feature",
+    "columns-feature",
+    "columns-feature",
+    "columns-feature",
+    "columns-feature",
+    "columns-feature",
+    "columns-feature",
+    "columns-feature",
+    "columns-feature",
+    "steps",
+    "accordion-faq",
+    "carousel-blog"
+  ]
+}

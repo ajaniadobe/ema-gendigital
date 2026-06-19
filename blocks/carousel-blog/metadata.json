@@ -1,0 +1,31 @@
+{
+  "variantName": "carousel-blog",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-06-18T23:42:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.avg.com/en-us/secure-vpn",
+    "originPage": "AVG consumer-product landing page (secure-vpn)",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "blog-carousel",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "rotating slides; each slide: editorial thumbnail image + H4 title + perex paragraph + Read More link",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["blog/article teaser carousels", "'latest posts' rotating card strips", "content recommendation sliders"],
+    "notSuitableFor": ["hero image carousels with overlay text", "static card grids (use card-feature)"]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/secure-vpn"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-18T23:42:00.000Z"
+  }
+}

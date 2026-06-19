@@ -1,0 +1,31 @@
+{
+  "variantName": "accordion-faq",
+  "baseBlock": "accordion",
+  "version": "1.0.0",
+  "created": "2026-06-18T23:42:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.avg.com/en-us/secure-vpn",
+    "originPage": "AVG consumer-product landing page (secure-vpn)",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "faq",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "expandable question (H4) + answer body with inline links; one row per Q/A pair",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": ["FAQ sections", "expandable Q/A lists", "support/help content", "pages backing FAQPage JSON-LD"],
+    "notSuitableFor": ["tabbed content (use advanced-tabs)", "non-interactive content lists"]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/secure-vpn", "/en-us/random-password-generator"],
+    "reuseCount": 2,
+    "lastUsed": "2026-06-18T23:55:00.000Z"
+  }
+}

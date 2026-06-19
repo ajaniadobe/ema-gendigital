@@ -1,0 +1,31 @@
+{
+  "variantName": "card-feature",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-18T23:42:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.avg.com/en-us/secure-vpn",
+    "originPage": "AVG consumer-product landing page (secure-vpn)",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature-grid",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "repeating feature item: icon + H3 + paragraph (no editorial image, no CTA)",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": ["benefit/feature grids with icon + heading + body copy", "product highlight grids", "consumer-product feature callouts"],
+    "notSuitableFor": ["icon + label only stripes (use usp-stripe)", "pricing cards (use card-pricing)", "image-led blog cards"]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/secure-vpn", "/en-us/random-password-generator"],
+    "reuseCount": 2,
+    "lastUsed": "2026-06-18T23:55:00.000Z"
+  }
+}

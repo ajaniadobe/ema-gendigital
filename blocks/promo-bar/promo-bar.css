@@ -1,0 +1,48 @@
+/* promo-bar: thin full-width brand-color announcement strip */
+.promo-bar-container .promo-bar-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.promo-bar {
+  background-color: var(--color-brand, #46a210);
+  color: #fff;
+  text-align: center;
+  padding: 10px 24px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.promo-bar .promo-bar-content,
+.promo-bar .promo-bar-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.promo-bar .promo-bar-link:hover {
+  text-decoration: underline;
+}
+
+.promo-bar p {
+  margin: 0;
+}
+
+.promo-bar .promo-bar-icon {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+}
+
+@media (width >= 900px) {
+  .promo-bar {
+    padding: 12px 32px;
+    font-size: 15px;
+  }
+}

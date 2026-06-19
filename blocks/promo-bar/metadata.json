@@ -1,0 +1,31 @@
+{
+  "variantName": "promo-bar",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-06-18T23:32:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.avg.com/en-us/homepage",
+    "originPage": "AVG homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "accent",
+    "density": "compact",
+    "purpose": "announcement-bar",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "icon + linked message",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": ["top promo/announcement strips", "site-wide sale banners", "thin full-width CTA messages"],
+    "notSuitableFor": ["page intro heroes", "content sections with body copy", "image-led banners"]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/homepage", "/en-us/secure-vpn"],
+    "reuseCount": 2,
+    "lastUsed": "2026-06-18T23:42:00.000Z"
+  }
+}
