@@ -202,6 +202,14 @@ a {
 
     &.btn-outline {
       background: transparent;
+      color: var(--avg-blue);
+      border-color: var(--avg-blue);
+    }
+
+    &.btn-outline:hover {
+      background: var(--avg-blue);
+      border-color: var(--avg-blue);
+      color: #fff;
     }
   }
 
