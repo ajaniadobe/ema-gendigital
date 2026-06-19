@@ -7,24 +7,44 @@
 .teaser-cta {
   background-color: var(--avg-green, #008941);
   color: #fff;
-  text-align: center;
-  padding: 48px 24px;
+  padding: 32px 24px;
 }
 
 .teaser-cta .teaser-cta-content {
-  max-width: 1200px;
+  max-width: var(--grid-container-width, 1360px);
   margin: 0 auto;
+}
+
+/* The message paragraph and button cluster share a bare wrapper div; lay them
+   out as one centered row (icon + text on the left, CTA on the right). */
+.teaser-cta .teaser-cta-content > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px 48px;
 }
 
 .teaser-cta h1,
 .teaser-cta h2,
 .teaser-cta h3 {
   color: #fff;
-  margin: 0 0 24px;
+  margin: 0;
 }
 
 .teaser-cta p {
   color: #fff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.teaser-cta .teaser-cta-icon {
+  flex: 0 0 auto;
 }
 
 .teaser-cta .teaser-cta-buttons {
@@ -33,7 +53,6 @@
   gap: 12px;
   justify-content: center;
   align-items: center;
-  margin-top: 8px;
 }
 
 /* white CTA buttons on the green banner (override global green-on-green) */

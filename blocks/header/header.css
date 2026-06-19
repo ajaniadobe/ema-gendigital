@@ -212,6 +212,7 @@ header {
     .main-nav-link {
       display: block;
       line-height: 64px;
+      color: var(--avg-text, #1e222a);
     }
 
     .menu,
