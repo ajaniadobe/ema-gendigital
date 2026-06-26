@@ -39,6 +39,7 @@ const PAGE_TEMPLATE = {
   "name": "consumer-product",
   "description": "Consumer product/app landing page: hero with commerce-driven pricing cards + free-trial CTA + Trustpilot, USP stripe, feature grids, 3-easy-steps, how-to-install / system requirements, FAQ accordion, blog carousel.",
   "urls": [
+    "https://www.avg.com/en-us/secure-vpn",
     "https://www.avg.com/en-us/antitrack",
     "https://www.avg.com/en-us/antivirus-for-android",
     "https://www.avg.com/en-us/avg-antivirus-for-mac",
@@ -60,7 +61,6 @@ const PAGE_TEMPLATE = {
     "https://www.avg.com/en-us/internet-security-for-mac",
     "https://www.avg.com/en-us/mobile-security-for-iphone-ipad",
     "https://www.avg.com/en-us/secure-browser",
-    "https://www.avg.com/en-us/secure-vpn",
     "https://www.avg.com/en-us/store",
     "https://www.avg.com/en-us/tuneup-software-updater",
     "https://www.avg.com/en-us/ultimate",
@@ -92,7 +92,7 @@ const PAGE_TEMPLATE = {
     {
       "name": "card-pricing",
       "instances": [
-        "#hero .pricing, #hero .buy, #bft .pricing, #bft"
+        ".combined-actionbox:not(#hero *), .actionbox-facelift:not(#hero *)"
       ]
     },
     {

@@ -116,6 +116,50 @@ var CustomImportScript = (() => {
   }
 
   // tools/importer/parsers/card-pricing.js
+  function cleanPriceText(node) {
+    if (!node) return "";
+    return (node.textContent || "").replace(/\s+/g, " ").replace(/([$£€])\s+/g, "$1").replace(/\s+\./g, ".").replace(/\s+\//g, "/").trim();
+  }
+  function readRenderedPrice(rendered) {
+    if (!rendered) return "";
+    const clone = rendered.cloneNode(true);
+    clone.querySelectorAll(".row-short").forEach((n) => n.remove());
+    clone.querySelectorAll("s").forEach((n) => n.remove());
+    return cleanPriceText(clone);
+  }
+  function buildPriceSummary(price) {
+    const parts = [];
+    const yearly = price.querySelector(".yearly-price");
+    const renderedHeadlineUsed = !yearly;
+    if (yearly) {
+      const headline = cleanPriceText(yearly);
+      if (headline) parts.push(headline);
+    } else {
+      const headline = readRenderedPrice(price.querySelector(".rendered-price"));
+      if (headline) parts.push(headline);
+    }
+    const monthPrice = price.querySelector(".month-price");
+    if (monthPrice) {
+      const m = cleanPriceText(monthPrice);
+      if (m) parts.push(m);
+    } else if (!renderedHeadlineUsed) {
+      const rendered = price.querySelector(".rendered-price");
+      const month = readRenderedPrice(rendered);
+      const prefix = price.querySelector(".yearly-price-text");
+      const prefixText = prefix ? cleanPriceText(prefix) : "";
+      if (month) parts.push(`${prefixText ? `${prefixText} ` : ""}${month}`.trim());
+    }
+    return parts.join(" \xB7 ");
+  }
+  function findBuyLink(box) {
+    return box.querySelector('a.actionbox-button, a.bi-cart-link, a[href*="checkout.avg.com"]');
+  }
+  function productIdFromLink(link) {
+    if (!link) return "";
+    const href = link.getAttribute("href") || "";
+    const m = href.match(/product=([^&]+)/);
+    return m ? m[1] : "";
+  }
   function parse4(element, { document }) {
     let boxes = Array.from(element.querySelectorAll(".box.font-avg-sans-1, .actionbox-buy .box"));
     if (!boxes.length) {
@@ -131,12 +175,20 @@ var CustomImportScript = (() => {
       return;
     }
     const cells = [];
+    const seen = document.__cardPricingSeen || (document.__cardPricingSeen = /* @__PURE__ */ new Set());
     boxes.forEach((box) => {
       const cardCell = [];
+      const buyLink = findBuyLink(box);
+      const dedupeKey = productIdFromLink(buyLink) || (box.querySelector(".actionbox-title") ? (box.querySelector(".actionbox-title").textContent || "").trim() : "");
+      if (dedupeKey) {
+        if (seen.has(dedupeKey)) return;
+        seen.add(dedupeKey);
+      }
       const term = box.querySelector(".actionbox-title");
-      if (term) {
+      const termText = term ? (term.textContent || "").trim() : "";
+      if (termText) {
         const h = document.createElement("p");
-        h.textContent = (term.textContent || "").trim();
+        h.textContent = termText;
         cardCell.push(h);
       }
       const savings = box.querySelector(".header-wrap .label .label-text, .label .label-text");
@@ -147,12 +199,13 @@ var CustomImportScript = (() => {
       }
       const price = box.querySelector(".actionbox-price-main");
       if (price) {
-        const p = document.createElement("p");
-        p.textContent = (price.textContent || "").replace(/\s+/g, " ").trim();
-        cardCell.push(p);
+        const summary = buildPriceSummary(price);
+        if (summary) {
+          const p = document.createElement("p");
+          p.textContent = summary;
+          cardCell.push(p);
+        }
       }
-      const buy = box.parentElement ? box.parentElement.querySelector('a.actionbox-button, a.bi-cart-link, a[href*="checkout.avg.com"]') : null;
-      const buyLink = buy || box.querySelector('a.actionbox-button, a.bi-cart-link, a[href*="checkout.avg.com"]');
       if (buyLink) {
         const a = document.createElement("a");
         a.setAttribute("href", buyLink.getAttribute("href"));
@@ -245,20 +298,40 @@ var CustomImportScript = (() => {
 
   // tools/importer/parsers/columns-feature.js
   function parse7(element, { document }) {
-    const features = Array.from(element.querySelectorAll(".feature"));
-    let mediaImg = null;
+    let features = Array.from(element.querySelectorAll(".feature"));
+    let featureMode = "feature";
+    if (!features.length) {
+      features = Array.from(element.querySelectorAll(".features-list > li, ul.features-list li, li.tick"));
+      featureMode = "li";
+    }
     const allImgs = Array.from(element.querySelectorAll("img"));
-    mediaImg = allImgs.find((img) => !img.closest(".feature")) || null;
+    const mediaImg = allImgs.find((img) => !img.closest(".feature, .features-list, li")) || allImgs[0] || null;
     if (!features.length) {
       element.replaceWith(...element.childNodes);
       return;
     }
     const listCell = [];
     features.forEach((feat) => {
-      const heading = feat.querySelector("h2, h3, h4");
-      const text = feat.querySelector("p");
-      if (heading) listCell.push(heading);
-      if (text) listCell.push(text);
+      if (featureMode === "li") {
+        const ps = Array.from(feat.querySelectorAll("p"));
+        const heading = feat.querySelector("p.like-h4") || ps[0] || null;
+        ps.forEach((p) => {
+          if (p === heading) {
+            const h = document.createElement("h3");
+            h.textContent = (p.textContent || "").trim();
+            listCell.push(h);
+          } else {
+            const para = document.createElement("p");
+            para.textContent = (p.textContent || "").trim();
+            if (para.textContent) listCell.push(para);
+          }
+        });
+      } else {
+        const heading = feat.querySelector("h2, h3, h4");
+        const text = feat.querySelector("p");
+        if (heading) listCell.push(heading);
+        if (text) listCell.push(text);
+      }
     });
     if (!listCell.length) {
       element.replaceWith(...element.childNodes);
@@ -424,6 +497,10 @@ var CustomImportScript = (() => {
         ".js-android",
         ".js-ios"
       ]);
+      WebImporter.DOMUtils.remove(element, [
+        ".js-notification-overlay-for-wrong-download",
+        ".notification-overlay-for-wrong-download"
+      ]);
       element.querySelectorAll(".js-platform-switch, .js-pc.pc, div.js-pc").forEach((wrapper) => {
         const onlyWrapperClasses = [...wrapper.classList].every((c) => c === "js-platform-switch" || c === "js-pc" || c === "pc");
         if (wrapper.tagName === "DIV" && onlyWrapperClasses) {
@@ -440,10 +517,17 @@ var CustomImportScript = (() => {
     }
     if (hookName === TransformHook.afterTransform) {
       WebImporter.DOMUtils.remove(element, [
+        "nav.navigation.global-navigation",
         "nav#menu",
         "#menu",
         "#navigation-main",
         "nav#navigation-main"
+      ]);
+      WebImporter.DOMUtils.remove(element, [
+        'a.sr-only.sr-only-focusable[href="#navigation-links"]',
+        "#modal-video",
+        "div.video.modal",
+        "#ZN_8ksX2qGJaVxaYw6"
       ]);
       WebImporter.DOMUtils.remove(element, [
         "#bottom",
@@ -473,6 +557,7 @@ var CustomImportScript = (() => {
     beforeTransform: "beforeTransform",
     afterTransform: "afterTransform"
   };
+  var MARKER_TAG = "eds-section-marker";
   function findSectionElement(element, section) {
     const selectors = Array.isArray(section.selector) ? section.selector : [section.selector];
     for (const selector of selectors) {
@@ -486,29 +571,40 @@ var CustomImportScript = (() => {
     return null;
   }
   function transform2(hookName, element, payload) {
-    if (hookName === TransformHook2.afterTransform) {
-      const template = payload && payload.template;
-      const sections = template && Array.isArray(template.sections) ? template.sections : [];
-      if (sections.length < 2) return;
-      const document = element.ownerDocument;
-      for (let i = sections.length - 1; i >= 0; i -= 1) {
-        const section = sections[i];
+    const template = payload && payload.template;
+    const sections = template && Array.isArray(template.sections) ? template.sections : [];
+    if (sections.length < 2) return;
+    const document = element.ownerDocument;
+    if (hookName === TransformHook2.beforeTransform) {
+      sections.forEach((section, index) => {
         const sectionEl = findSectionElement(element, section);
-        if (!sectionEl) continue;
-        if (section.style) {
+        if (!sectionEl || !sectionEl.parentNode) return;
+        const marker = document.createElement(MARKER_TAG);
+        marker.setAttribute("data-section-index", String(index));
+        if (section.style) marker.setAttribute("data-section-style", section.style);
+        sectionEl.parentNode.insertBefore(marker, sectionEl);
+      });
+      return;
+    }
+    if (hookName === TransformHook2.afterTransform) {
+      const markers = Array.from(element.querySelectorAll(MARKER_TAG));
+      markers.forEach((marker) => {
+        const index = Number(marker.getAttribute("data-section-index"));
+        const style = marker.getAttribute("data-section-style");
+        const parent = marker.parentNode;
+        if (!parent) return;
+        if (index > 0) {
+          parent.insertBefore(document.createElement("hr"), marker);
+        }
+        if (style) {
           const metadataBlock = WebImporter.Blocks.createBlock(document, {
             name: "Section Metadata",
-            cells: { style: section.style }
+            cells: { style }
           });
-          if (sectionEl.parentNode) {
-            sectionEl.parentNode.insertBefore(metadataBlock, sectionEl.nextSibling);
-          }
+          parent.insertBefore(metadataBlock, marker);
         }
-        if (i > 0 && sectionEl.parentNode) {
-          const hr = document.createElement("hr");
-          sectionEl.parentNode.insertBefore(hr, sectionEl);
-        }
-      }
+        marker.remove();
+      });
     }
   }
 
@@ -530,6 +626,7 @@ var CustomImportScript = (() => {
     "name": "consumer-product",
     "description": "Consumer product/app landing page: hero with commerce-driven pricing cards + free-trial CTA + Trustpilot, USP stripe, feature grids, 3-easy-steps, how-to-install / system requirements, FAQ accordion, blog carousel.",
     "urls": [
+      "https://www.avg.com/en-us/secure-vpn",
       "https://www.avg.com/en-us/antitrack",
       "https://www.avg.com/en-us/antivirus-for-android",
       "https://www.avg.com/en-us/avg-antivirus-for-mac",
@@ -551,7 +648,6 @@ var CustomImportScript = (() => {
       "https://www.avg.com/en-us/internet-security-for-mac",
       "https://www.avg.com/en-us/mobile-security-for-iphone-ipad",
       "https://www.avg.com/en-us/secure-browser",
-      "https://www.avg.com/en-us/secure-vpn",
       "https://www.avg.com/en-us/store",
       "https://www.avg.com/en-us/tuneup-software-updater",
       "https://www.avg.com/en-us/ultimate",
@@ -583,7 +679,7 @@ var CustomImportScript = (() => {
       {
         "name": "card-pricing",
         "instances": [
-          "#hero .pricing, #hero .buy, #bft .pricing, #bft"
+          ".combined-actionbox:not(#hero *), .actionbox-facelift:not(#hero *)"
         ]
       },
       {

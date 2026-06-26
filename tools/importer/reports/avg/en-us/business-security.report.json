@@ -2,7 +2,7 @@
   "status": "success",
   "url": "https://www.avg.com/en-us/business-security",
   "path": "avg/en-us/business-security",
-  "timestamp": "2026-06-19T00:50:50.665Z",
+  "timestamp": "2026-06-22T17:50:59.816Z",
   "title": "AVG Business Security Solutions for Small Businesses",
   "template": "business-product",
   "blocks": [
@@ -10,6 +10,7 @@
     "comparison-matrix",
     "teaser-cta",
     "columns",
-    "columns-feature"
+    "columns-feature",
+    "card"
   ]
 }

@@ -2,10 +2,12 @@
   "status": "success",
   "url": "https://www.avg.com/en-us/breachguard",
   "path": "avg/en-us/breachguard",
-  "timestamp": "2026-06-19T00:58:30.155Z",
+  "timestamp": "2026-06-22T18:12:46.551Z",
   "title": "Data Breach & Leak Prevention Software | AVG BreachGuard",
   "template": "consumer-product",
   "blocks": [
+    "card-pricing",
+    "card-pricing",
     "carousel-blog"
   ]
 }

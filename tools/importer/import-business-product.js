@@ -33,10 +33,10 @@ const PAGE_TEMPLATE = {
   "name": "business-product",
   "description": "Business/enterprise product page: hero with demo/contact-sales CTA, feature media sections, product comparison/spec table, contact CTA.",
   "urls": [
+    "https://www.avg.com/en-us/business-security",
     "https://www.avg.com/en-us/antivirus-business-edition",
     "https://www.avg.com/en-us/business-events-and-webinars",
     "https://www.avg.com/en-us/business-resources",
-    "https://www.avg.com/en-us/business-security",
     "https://www.avg.com/en-us/email-server-business-edition",
     "https://www.avg.com/en-us/endpoint-protection",
     "https://www.avg.com/en-us/file-server-business-edition",
@@ -86,7 +86,7 @@ const PAGE_TEMPLATE = {
     {
       "name": "card",
       "instances": [
-        "#body-inner div.section:last-of-type"
+        "#FreeToolsAndGuides, #body-inner div.section:has(.span4 h3):has(.span4 img)"
       ]
     }
   ],
@@ -107,15 +107,15 @@ const PAGE_TEMPLATE = {
       "id": "free-tools-guides",
       "name": "section-resources",
       "selector": [
-        "#body-inner div.section:last-of-type"
+        "#FreeToolsAndGuides"
       ],
       "style": "light",
       "blocks": [
         "card"
       ],
       "defaultContent": [
-        "#body-inner div.section:last-of-type h2",
-        "#body-inner div.section:last-of-type > p"
+        "#FreeToolsAndGuides h2",
+        "#FreeToolsAndGuides > .container > .row:first-child > .span12 > p"
       ]
     }
   ]
