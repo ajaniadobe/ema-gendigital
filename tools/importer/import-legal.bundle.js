@@ -101,6 +101,10 @@ var CustomImportScript = (() => {
         ".js-android",
         ".js-ios"
       ]);
+      WebImporter.DOMUtils.remove(element, [
+        ".js-notification-overlay-for-wrong-download",
+        ".notification-overlay-for-wrong-download"
+      ]);
       element.querySelectorAll(".js-platform-switch, .js-pc.pc, div.js-pc").forEach((wrapper) => {
         const onlyWrapperClasses = [...wrapper.classList].every((c) => c === "js-platform-switch" || c === "js-pc" || c === "pc");
         if (wrapper.tagName === "DIV" && onlyWrapperClasses) {
@@ -117,10 +121,17 @@ var CustomImportScript = (() => {
     }
     if (hookName === TransformHook.afterTransform) {
       WebImporter.DOMUtils.remove(element, [
+        "nav.navigation.global-navigation",
         "nav#menu",
         "#menu",
         "#navigation-main",
         "nav#navigation-main"
+      ]);
+      WebImporter.DOMUtils.remove(element, [
+        'a.sr-only.sr-only-focusable[href="#navigation-links"]',
+        "#modal-video",
+        "div.video.modal",
+        "#ZN_8ksX2qGJaVxaYw6"
       ]);
       WebImporter.DOMUtils.remove(element, [
         "#bottom",

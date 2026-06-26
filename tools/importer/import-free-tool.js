@@ -53,7 +53,7 @@ const PAGE_TEMPLATE = {
     {
       "name": "card",
       "instances": [
-        "div.js-platform-switch"
+        ".modal-bottom:not(.modal *)"
       ]
     },
     {

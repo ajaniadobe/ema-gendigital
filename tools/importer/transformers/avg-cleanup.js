@@ -71,6 +71,27 @@ export default function transform(hookName, element, payload) {
       '.js-ios',
     ]);
 
+    // --- Runtime "wrong download" device-detection overlay (ISSUE 2) ---
+    // Verified in migration-work/.templates/consumer-product/cleaned.html
+    // (representative URL secure-vpn):
+    //   div.js-notification-overlay-for-wrong-download.notification-overlay-for-wrong-download
+    //     (line 1379) - a runtime popup that holds the ENTIRE device-detection
+    //     message bank ("Looks like you're using Mac. Would you like this app for
+    //     Mac or Windows?..." x many, lines 1384-1485) PLUS the alternate-platform
+    //     download-button matrix (~40 stray <a href="#"> js-instead-link
+    //     bi-download-link buttons, lines 1501-1644) and the <#textString..
+    //     cta-download-free-ios#> template placeholders (lines 1635-1645).
+    // This is shown/populated only at runtime by JS; none of it is authorable, and
+    // it previously leaked as a garbled <h2> + stray button grid into the page body.
+    // Removing the single overlay container strips both (a) the text bank and (b) the
+    // button matrix. The legitimate checkout.avg.com pricing links and
+    // /download-thank-you.php trial links live OUTSIDE this overlay (verified lines
+    // 366-1054) and are preserved.
+    WebImporter.DOMUtils.remove(element, [
+      '.js-notification-overlay-for-wrong-download',
+      '.notification-overlay-for-wrong-download',
+    ]);
+
     // Unwrap the platform-switch + PC wrappers so the default PC content becomes
     // flat section content. Strip only the .js-pc/.pc class markers from elements
     // that also carry real content/classes; fully-unwrap pure wrapper <div>s.
@@ -96,14 +117,45 @@ export default function transform(hookName, element, payload) {
 
   if (hookName === TransformHook.afterTransform) {
     // --- Global header / megamenu (verified) ---
-    //   nav#menu.navigation.global-navigation (line 10) - global header shell
-    //   #navigation-main (line 42)                       - megamenu nav row
+    //   nav#menu.navigation.global-navigation (homepage line 10) - global header shell
+    //   #navigation-main (homepage line 42)                      - megamenu nav row
     // These are a separate global block; excluded from page body.
+    //
+    // ISSUE 1: On the `content` template the global header is emitted WITHOUT an id -
+    // `<nav class="navigation global-navigation">` (verified
+    // migration-work/.templates/content/cleaned.html line 3, contrast legal line 4 /
+    // homepage line 10 which DO carry id="menu"). The previous id-only selectors
+    // (nav#menu / #menu) therefore missed it entirely, so its mobile-header chrome
+    // leaked into the page body: the language-selector trigger
+    // <a href="javascript:void();"> wrapping flags.png + arrow-down.svg
+    // (content line 6), the bare MENU button text (content line 18), and the AVG logo
+    // link <a href="/en-us/homepage"><img ...avg-logo-83x34.png></a> (content lines
+    // 28-30). The class-based selector below catches the global header on EVERY
+    // template (id'd or not) and is strictly more robust than the id-only selectors.
     WebImporter.DOMUtils.remove(element, [
+      'nav.navigation.global-navigation',
       'nav#menu',
       '#menu',
       '#navigation-main',
       'nav#navigation-main',
+    ]);
+
+    // --- ISSUE 1: residual header/footer chrome that sits OUTSIDE the global <nav> ---
+    // On the `content` template these runtime/a11y elements are siblings of the page
+    // body (not inside the global nav, so removing the nav alone leaves them behind)
+    // and leaked into the article body. Verified in
+    // migration-work/.templates/content/cleaned.html:
+    //   a.sr-only.sr-only-focusable[href="#navigation-links"] "Skip to menu" (line 600)
+    //   div.video.modal#modal-video - runtime video modal carrying a stray × glyph
+    //     (lines 722-734)
+    //   #ZN_8ksX2qGJaVxaYw6 - empty analytics container (line 597)
+    // (The matching "Skip to content" link and #language-selector are already handled
+    //  above / below; these complete the set for pages whose nav has no id.)
+    WebImporter.DOMUtils.remove(element, [
+      'a.sr-only.sr-only-focusable[href="#navigation-links"]',
+      '#modal-video',
+      'div.video.modal',
+      '#ZN_8ksX2qGJaVxaYw6',
     ]);
 
     // --- Global footer (separate global block) ---

@@ -2,13 +2,14 @@
   "status": "success",
   "url": "https://www.avg.com/en-us/avg-pctuneup",
   "path": "avg/en-us/avg-pctuneup",
-  "timestamp": "2026-06-19T00:54:49.856Z",
+  "timestamp": "2026-06-22T18:08:10.222Z",
   "title": "PC Cleaner & Tune Up | Download Trial | AVG",
   "template": "consumer-product",
   "blocks": [
     "promo-bar",
     "hero-product",
     "rating",
+    "card-pricing",
     "columns-feature",
     "carousel-blog"
   ]

@@ -146,6 +146,7 @@
     {
       "name": "consumer-product",
       "urls": [
+        "https://www.avg.com/en-us/secure-vpn",
         "https://www.avg.com/en-us/antitrack",
         "https://www.avg.com/en-us/antivirus-for-android",
         "https://www.avg.com/en-us/avg-antivirus-for-mac",
@@ -167,7 +168,6 @@
         "https://www.avg.com/en-us/internet-security-for-mac",
         "https://www.avg.com/en-us/mobile-security-for-iphone-ipad",
         "https://www.avg.com/en-us/secure-browser",
-        "https://www.avg.com/en-us/secure-vpn",
         "https://www.avg.com/en-us/store",
         "https://www.avg.com/en-us/tuneup-software-updater",
         "https://www.avg.com/en-us/ultimate",
@@ -202,7 +202,7 @@
         {
           "name": "card-pricing",
           "instances": [
-            "#hero .pricing, #hero .buy, #bft .pricing, #bft"
+            ".combined-actionbox:not(#hero *), .actionbox-facelift:not(#hero *)"
           ]
         },
         {
@@ -337,10 +337,10 @@
     {
       "name": "business-product",
       "urls": [
+        "https://www.avg.com/en-us/business-security",
         "https://www.avg.com/en-us/antivirus-business-edition",
         "https://www.avg.com/en-us/business-events-and-webinars",
         "https://www.avg.com/en-us/business-resources",
-        "https://www.avg.com/en-us/business-security",
         "https://www.avg.com/en-us/email-server-business-edition",
         "https://www.avg.com/en-us/endpoint-protection",
         "https://www.avg.com/en-us/file-server-business-edition",
@@ -393,7 +393,7 @@
         {
           "name": "card",
           "instances": [
-            "#body-inner div.section:last-of-type"
+            "#FreeToolsAndGuides, #body-inner div.section:has(.span4 h3):has(.span4 img)"
           ]
         }
       ],
@@ -414,15 +414,15 @@
           "id": "free-tools-guides",
           "name": "section-resources",
           "selector": [
-            "#body-inner div.section:last-of-type"
+            "#FreeToolsAndGuides"
           ],
           "style": "light",
           "blocks": [
             "card"
           ],
           "defaultContent": [
-            "#body-inner div.section:last-of-type h2",
-            "#body-inner div.section:last-of-type > p"
+            "#FreeToolsAndGuides h2",
+            "#FreeToolsAndGuides > .container > .row:first-child > .span12 > p"
           ]
         }
       ]
@@ -457,7 +457,7 @@
         {
           "name": "card",
           "instances": [
-            "div.js-platform-switch"
+            ".modal-bottom:not(.modal *)"
           ]
         },
         {

@@ -117,7 +117,45 @@ var CustomImportScript = (() => {
 
   // tools/importer/parsers/card.js
   function parse3(element, { document }) {
+    const modal = element.matches && element.matches(".modal-bottom") ? element : element.querySelector ? element.querySelector(".modal-bottom") : null;
+    if (modal) {
+      const cardCell = [];
+      const icon = modal.querySelector("img");
+      if (icon) {
+        const img = document.createElement("img");
+        img.setAttribute("src", icon.getAttribute("src"));
+        img.setAttribute("alt", icon.getAttribute("alt") || "");
+        cardCell.push(img);
+      }
+      const heading = modal.querySelector("h2, h3, h4");
+      if (heading) {
+        const h = document.createElement("h3");
+        h.textContent = (heading.textContent || "").trim();
+        cardCell.push(h);
+      }
+      const descEl = modal.querySelector(".text .js-pc p, .text .pc p, .text p, .js-pc p, p");
+      if (descEl) {
+        const p = document.createElement("p");
+        p.textContent = (descEl.textContent || "").replace(/\s+/g, " ").trim();
+        if (p.textContent) cardCell.push(p);
+      }
+      const linkEl = modal.querySelector(".button-wrapper .js-pc a[href], .js-pc a[href], a[href]");
+      if (linkEl) {
+        const a = document.createElement("a");
+        a.setAttribute("href", linkEl.getAttribute("href"));
+        a.textContent = (linkEl.textContent || "Free download").replace(/\s+/g, " ").trim();
+        cardCell.push(a);
+      }
+      if (cardCell.length) {
+        const block2 = WebImporter.Blocks.createBlock(document, { name: "card", cells: [[cardCell]] });
+        element.replaceWith(block2);
+        return;
+      }
+    }
     let cards = Array.from(element.querySelectorAll(".included-card, .card-item, .card-product"));
+    if (!cards.length) {
+      cards = Array.from(element.querySelectorAll(":scope .span4, :scope .row > .span4")).filter((c) => c.querySelector("img") || c.querySelector("h2, h3, h4"));
+    }
     if (!cards.length) {
       cards = Array.from(element.querySelectorAll(":scope .cards > div, :scope .row > div > div"));
     }
@@ -129,15 +167,24 @@ var CustomImportScript = (() => {
     cards.forEach((card) => {
       const name = card.querySelector('.h5, h2, h3, h4, [class*="title"]');
       const desc = card.querySelector('.body-3, .included-card-body .body-3, p, [class*="body"]');
+      const thumb = card.querySelector("img");
       const link = card.querySelector("a.js-pc, a[href]");
       const cardCell = [];
+      if (thumb) {
+        const img = document.createElement("img");
+        img.setAttribute("src", thumb.getAttribute("src"));
+        if (thumb.getAttribute("alt")) img.setAttribute("alt", thumb.getAttribute("alt"));
+        cardCell.push(img);
+      }
       if (name) cardCell.push(name);
       if (desc && desc !== name) cardCell.push(desc);
-      if (link) {
+      const nameHref = name && name.querySelector("a[href]") ? name.querySelector("a[href]").getAttribute("href") : null;
+      if (link && link.getAttribute("href") !== nameHref) {
         const a = document.createElement("a");
         a.setAttribute("href", link.getAttribute("href"));
-        a.textContent = (link.textContent || "").trim();
-        cardCell.push(a);
+        const linkText = (link.textContent || "").replace(/\s+/g, " ").trim();
+        a.textContent = linkText || (name ? (name.textContent || "").trim() : "");
+        if (a.textContent) cardCell.push(a);
       }
       if (cardCell.length) cells.push([cardCell]);
     });
@@ -270,6 +317,10 @@ var CustomImportScript = (() => {
         ".js-android",
         ".js-ios"
       ]);
+      WebImporter.DOMUtils.remove(element, [
+        ".js-notification-overlay-for-wrong-download",
+        ".notification-overlay-for-wrong-download"
+      ]);
       element.querySelectorAll(".js-platform-switch, .js-pc.pc, div.js-pc").forEach((wrapper) => {
         const onlyWrapperClasses = [...wrapper.classList].every((c) => c === "js-platform-switch" || c === "js-pc" || c === "pc");
         if (wrapper.tagName === "DIV" && onlyWrapperClasses) {
@@ -286,10 +337,17 @@ var CustomImportScript = (() => {
     }
     if (hookName === TransformHook.afterTransform) {
       WebImporter.DOMUtils.remove(element, [
+        "nav.navigation.global-navigation",
         "nav#menu",
         "#menu",
         "#navigation-main",
         "nav#navigation-main"
+      ]);
+      WebImporter.DOMUtils.remove(element, [
+        'a.sr-only.sr-only-focusable[href="#navigation-links"]',
+        "#modal-video",
+        "div.video.modal",
+        "#ZN_8ksX2qGJaVxaYw6"
       ]);
       WebImporter.DOMUtils.remove(element, [
         "#bottom",
@@ -319,6 +377,7 @@ var CustomImportScript = (() => {
     beforeTransform: "beforeTransform",
     afterTransform: "afterTransform"
   };
+  var MARKER_TAG = "eds-section-marker";
   function findSectionElement(element, section) {
     const selectors = Array.isArray(section.selector) ? section.selector : [section.selector];
     for (const selector of selectors) {
@@ -332,29 +391,40 @@ var CustomImportScript = (() => {
     return null;
   }
   function transform2(hookName, element, payload) {
-    if (hookName === TransformHook2.afterTransform) {
-      const template = payload && payload.template;
-      const sections = template && Array.isArray(template.sections) ? template.sections : [];
-      if (sections.length < 2) return;
-      const document = element.ownerDocument;
-      for (let i = sections.length - 1; i >= 0; i -= 1) {
-        const section = sections[i];
+    const template = payload && payload.template;
+    const sections = template && Array.isArray(template.sections) ? template.sections : [];
+    if (sections.length < 2) return;
+    const document = element.ownerDocument;
+    if (hookName === TransformHook2.beforeTransform) {
+      sections.forEach((section, index) => {
         const sectionEl = findSectionElement(element, section);
-        if (!sectionEl) continue;
-        if (section.style) {
+        if (!sectionEl || !sectionEl.parentNode) return;
+        const marker = document.createElement(MARKER_TAG);
+        marker.setAttribute("data-section-index", String(index));
+        if (section.style) marker.setAttribute("data-section-style", section.style);
+        sectionEl.parentNode.insertBefore(marker, sectionEl);
+      });
+      return;
+    }
+    if (hookName === TransformHook2.afterTransform) {
+      const markers = Array.from(element.querySelectorAll(MARKER_TAG));
+      markers.forEach((marker) => {
+        const index = Number(marker.getAttribute("data-section-index"));
+        const style = marker.getAttribute("data-section-style");
+        const parent = marker.parentNode;
+        if (!parent) return;
+        if (index > 0) {
+          parent.insertBefore(document.createElement("hr"), marker);
+        }
+        if (style) {
           const metadataBlock = WebImporter.Blocks.createBlock(document, {
             name: "Section Metadata",
-            cells: { style: section.style }
+            cells: { style }
           });
-          if (sectionEl.parentNode) {
-            sectionEl.parentNode.insertBefore(metadataBlock, sectionEl.nextSibling);
-          }
+          parent.insertBefore(metadataBlock, marker);
         }
-        if (i > 0 && sectionEl.parentNode) {
-          const hr = document.createElement("hr");
-          sectionEl.parentNode.insertBefore(hr, sectionEl);
-        }
-      }
+        marker.remove();
+      });
     }
   }
 
@@ -395,7 +465,7 @@ var CustomImportScript = (() => {
       {
         "name": "card",
         "instances": [
-          "div.js-platform-switch"
+          ".modal-bottom:not(.modal *)"
         ]
       },
       {
